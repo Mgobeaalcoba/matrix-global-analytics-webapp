@@ -1,0 +1,48 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 36px;
+    color: #333;
+}
+
+p {
+    font-size: 18px;
+    color: #666;
+}
+
+/* Estilos para las secciones */
+.section {
+    margin-bottom: 40px;
+}
+
+/* Estilos para los títulos */
+h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Estilos para las listas */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+/* Estilos para los elementos de la lista */
+li {
+    font-size: 18px;
+    color: #666;
+    margin-bottom:8px;
+    margin-left: 16px;
+}
