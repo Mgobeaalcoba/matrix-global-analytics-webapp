@@ -4594,3 +4594,11 @@ b, strong {
     min-width: 50px;
   }
 }
+
+.header_menu_16 .link {
+    text-align: center;
+}
+
+.header_menu_16 .logo {
+    text-align: center;
+}
