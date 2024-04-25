@@ -8,7 +8,7 @@
         {% load static %}
         <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
         <script src="{% static 'js/script.js' %}"></script>
-        <link rel="icon" href="{% static 'i/favicon.png' %}" type="image/x-icon">
+        <link rel="icon" href="{% static 'i/logo-sin-fondo.png' %}" type="image/x-icon">
 		<!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:100,200,300,400,600,500,700,800,900|Nunito:100,200,300,400,500,600,700,800,900&amp;subset=latin" rel="stylesheet">
         <!-- Bootstrap 4.3.1 CSS -->
@@ -36,8 +36,6 @@
 
                 <div><a href="#" class="f-heading f-22 link color-main mb-20">Home</a></div>
 
-                <div><a href="#" class="f-heading f-22 link color-main mb-20">Tour</a></div>
-
                 <div><a href="#" class="f-heading f-22 link color-main mb-20">Precios</a></div>
 
                 <div><a href="#" class="f-heading f-22 link color-main mb-20">¿Quienes somos?</a></div>
@@ -55,8 +53,9 @@
                                 <a href="#" target="_blank" class="link color-main f-18 mx-10"><i class="fab fa-instagram"></i></a>
                             </div>
             </div>
-        </div><!-- Header 16 -->
+        </div>
 
+        <!-- Header 16 -->
         <style>
             .header_16{
                 background-image: url(../../static/i/header_16_bg.jpg);
@@ -75,16 +74,14 @@
                     <div class="row justify-content-center">
                         <div class="col-xl-10" data-aos-duration="600" data-aos="fade-down" data-aos-delay="1200">
                             <div class="row align-items-baseline">
-                                <div class="col-lg-9 d-flex align-items-center f-18 medium">
-                                    <div class="mr-15 logo color-white">Matrix Global Analytics</div>
-                                    <a href="#" class="mx-15 link color-white">Tour</a>
+                                <div class="col-lg-18 d-flex align-items-center f-18 medium">
+                                    <img src="{% static 'i/logo-sin-fondo.png' %}" alt="Logo" class="mx-15 logo-image" width="30" height="30">
+                                    <div class="mx-15 logo color-white">Matrix Global Analytics</div>
                                     <a href="#" class="mx-15 link color-white">Precios</a>
                                     <a href="#" class="mx-15 link color-white">¿Quiénes somos?</a>
                                     <a href="#" class="mx-15 link color-white">Preguntas Frecuentes</a>
                                     <a href="#" class="mx-15 link color-white">Contáctenos</a>
-                                </div>
-                                <div class="col-lg-3 d-flex justify-content-end align-items-baseline">
-                                    <a href="#" class="btn sm action-1">Comprar desde U$S50</a>
+                                    <a href="#" class="mx-30 btn sm action-3">Comprar</a>
                                 </div>
                             </div>
                         </div>
@@ -97,7 +94,8 @@
                     <div class="col-xl-10">
                         <div class="row flex-column-reverse flex-md-row align-items-stretch text-center text-md-left">
                             <div class="col-lg-7 col-md-9 pt-40">
-                                <div class="mb-3 logo d-block d-xl-none color-white logo_mobile">Startup 3</div>
+                                <img src="{% static 'i/logo-sin-fondo.png' %}" alt="Logo" class="mb-15 logo-image" width="150" height="150">
+                                <div class="mb-3 logo d-block d-xl-none color-white logo_mobile">Matrix Global Analytics</div>
                                 <h1 class="mb-20 big" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">Transforma Tu Negocio Ahora</h1>
                                 <div class="f-22 text-adaptive" data-aos-duration="600" data-aos="fade-down" data-aos-delay="300">
                                     Haz volar tu negocio desbloqueando el Potencial de tus Datos. Soluciones Analíticas Personalizadas para Impulsar tu Éxito Empresarial. ¡Descubre el Poder de Matrix Global Analytics Hoy!
