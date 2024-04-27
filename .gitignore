@@ -2,8 +2,10 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=django
 
 # IDE's
-.vscode/
+.vscode
+vscode/
 .idea/
+idea/
 
 ### Django ###
 *.log
