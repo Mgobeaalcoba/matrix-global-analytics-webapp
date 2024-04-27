@@ -3,9 +3,163 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Formulario de Contacto</title>
+    <title>Contacto</title>
+    {% load static %}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/styles.css' %}"
+    />
+    <script src="{% static 'js/script.js' %}"></script>
+    <link
+      rel="icon"
+      href="{% static 'i/logo-sin-fondo.png' %}"
+      type="image/x-icon"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito+Sans:100,200,300,400,600,500,700,800,900|Nunito:100,200,300,400,500,600,700,800,900&amp;subset=latin"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap 4.3.1 CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!-- Slick 1.8.1 jQuery plugin CSS (Sliders) -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <!-- Fancybox 3 jQuery plugin CSS (Open images and video in popup) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"
+    />
+    <!-- AOS 2.3.1 jQuery plugin CSS (Animations) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- FontAwesome CSS -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <!-- Startup 3 CSS (Styles for all blocks) -->
+    <link href="../../static/css/styles.css" rel="stylesheet" />
+    <!-- jQuery 3.3.1 -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+      /* Estilos adicionales para el formulario */
+      .form-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1%;
+        max-width: 100%;
+        max-height: 100%;
+        background-color:antiquewhite;
+        background-image: url(../../static/i/logo-sin-fondo.png);
+      }
+
+      /* Estilos para dispositivos móviles */
+      @media (max-width: 767.98px) {
+        .form-container {
+            padding: 10%; /* Cambiar el padding al 10% en dispositivos móviles */
+        }
+      }
+
+      .form-wrapper {
+        max-width: 100%; /* Extender al 70% del ancho de la pantalla */
+        max-height: 100%;
+        /* max-width: 400px; */
+        padding: 20px;
+        border: 4px solid black; /* Color de borde */
+        border-radius: 10px; /* Bordes redondeados */
+        background-image: url(../../static/i/fondo-formulario4.jpg);
+      }
+
+      .form-wrapper label {
+        color: white; /* Cambiar el color del texto a blanco */
+      }
+
+    </style>
   </head>
   <body>
-    Espacio para el formulario de contacto
+    <div class="form-container">
+      <div class="form-wrapper">
+        <form action="#" method="post">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nombre"
+              name="nombre"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="apellido">Apellido:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="apellido"
+              name="apellido"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="telefono">Teléfono:</label>
+            <input
+              type="tel"
+              class="form-control"
+              id="telefono"
+              name="telefono"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="asunto">Asunto:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="asunto"
+              name="asunto"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="consulta">Consulta:</label>
+            <textarea
+              class="form-control"
+              id="consulta"
+              name="consulta"
+              rows="5"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Enviar Consulta</button>
+          <!-- Nuevo botón "Volver" -->
+          <a href="/" class="btn btn-secondary btn-volver">Volver</a>
+            Volver
+          </button>
+        </form>
+      </div>
+    </div>
   </body>
 </html>
