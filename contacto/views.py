@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.core.mail import send_mail
 from django.http import JsonResponse
+from contacto.models import Email
 
 def formulario_contacto(request):
     if request.method == 'POST':
@@ -10,6 +11,16 @@ def formulario_contacto(request):
         telefono = request.POST.get('telefono', '')
         asunto = request.POST.get('asunto', '')
         consulta = request.POST.get('consulta', '')
+
+        # Crear un objeto Email y guardarlo en la base de datos
+        email_obj = Email.objects.create(
+            nombre=nombre,
+            apellido=apellido,
+            email=email,
+            telefono=telefono,
+            asunto=asunto,
+            consulta=consulta
+        )
 
         # Constants
         SENDER = 'mariano_gobea@hotmail.com'
