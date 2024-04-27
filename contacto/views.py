@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.core.mail import send_mail
 from django.http import JsonResponse
-from django.http import HttpResponseRedirect
 
 def formulario_contacto(request):
     if request.method == 'POST':
@@ -40,6 +39,3 @@ def formulario_contacto(request):
         return JsonResponse({'message': 'Gracias por comunicarte con MGA. A la brevedad nos pondremos en contacto contigo.'})  # Retorna un json para mostrarlo como alert
 
     return render(request, 'contacto/formulario_contacto.html')  # Renderiza el formulario de contacto si el método de solicitud es GET
-
-# email = EmailMessage('Test', 'Lorem Ipsum', to=['gobeamariano@gmail.com'])
-# email.send()
