@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 import os
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -129,3 +130,12 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# Config gmail por send forms
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp-relay.brevo.com' # smtp.gmail.com smtp-mail.outlook.com
+EMAIL_PORT = 587 # 587
+EMAIL_USE_TLS = False
+EMAIL_HOST_USER = 'gobeamariano@gmail.com' # config('EMAIL_HOST_USER') mariano_gobea@hotmail.com
+EMAIL_HOST_PASSWORD = 'xsmtpsib-5bbb75f5fb00d59def71b7e4b6202f5eeeee09ff656dd98739f1b5313848d135-LzpGMNmOCatKb2gU' # config('EMAIL_HOST_PASSWORD')

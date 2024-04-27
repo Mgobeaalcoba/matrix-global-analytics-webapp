@@ -7,6 +7,9 @@ vscode/
 .idea/
 idea/
 
+# Environment Variables
+.env
+
 ### Django ###
 *.log
 *.pot
