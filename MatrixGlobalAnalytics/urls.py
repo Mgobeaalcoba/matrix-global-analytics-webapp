@@ -18,9 +18,12 @@ from django.contrib import admin
 from django.urls import path
 from home import views as home_views
 from contacto import views as contacto_views
+from legal import views as legal_views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', home_views.home, name='home'),
     path('contacto/', contacto_views.formulario_contacto, name="formulario_contacto"),
+    path('terminos-de-uso/', legal_views.terminos_de_uso, name='terminos_de_uso'),
+    path('politica-de-privacidad/', legal_views.politica_de_privacidad, name='politica_de_privacidad'),
 ]

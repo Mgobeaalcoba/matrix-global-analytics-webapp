@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "home",        # Aplicación "home" agregada
     "contacto",    # Aplicación "contacto" agregada
+    "legal",       # Aplicación "legal" agregada
 ]
 
 
@@ -131,7 +132,7 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-# Config gmail por send forms
+# Config gmail por send forms in local
 
 #EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 #EMAIL_HOST = 'smtp-relay.brevo.com'
@@ -139,6 +140,8 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 #EMAIL_USE_TLS = False
 #EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 #EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+
+# Config gmail por send forms in local
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
