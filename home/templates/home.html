@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Matrix Global Analytics</title>
+    <title>MGA Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Static Files -->
     {% load static %}
@@ -51,7 +51,29 @@
     />
     <!-- jQuery 3.3.1 -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    {% block head %}{% endblock %}
+
+    <!-- Estaba al final pero lo llevo al head a ver como responde -->
+
+    <!-- Bootstrap 4.3.1 JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <!-- Fancybox 3 jQuery plugin JS (Open images and video in popup) -->
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <!-- Google maps JS API -->
+    <script
+      type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDP6Ex5S03nvKZJZSvGXsEAi3X_tFkua4U"
+    ></script>
+    <!-- Slick 1.8.1 jQuery plugin JS (Sliders) -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+    <!-- AOS 2.3.1 jQuery plugin JS (Animations) -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Maskedinput jQuery plugin JS (Masks for input fields) -->
+    <script src="../../static/js/jquery.maskedinput.min.js"></script>
+    <!-- Startup 3 JS (Custom js for all blocks) -->
+    <script src="../../static/js/script.js"></script>
   </head>
 
   <body>
@@ -158,15 +180,18 @@
             >
               <div class="row align-items-baseline">
                 <div class="col-lg-18 d-flex align-items-center f-18 medium">
-                  <img
-                    src="{% static 'i/logo-sin-fondo.png' %}"
-                    alt="Logo"
-                    class="mx-15 logo-image"
-                    width="30"
-                    height="30"
-                  />
+                  <a href="/" class="mx-15 link color-white"
+                    ><img
+                      src="{% static 'i/logo-sin-fondo.png' %}"
+                      alt="Logo"
+                      class="mx-15 logo-image"
+                      width="50"
+                      height="50"
+                  /></a>
                   <div class="mx-15 logo color-white">
-                    Matrix Global Analytics
+                    <a href="/" class="mx-15 link color-white"
+                      >Matrix Global Analytics</a
+                    >
                   </div>
                   <a href="#" class="mx-15 link color-white">Precios</a>
                   <a href="#" class="mx-15 link color-white">¿Quiénes somos?</a>
@@ -633,8 +658,13 @@
                 class="mt-30 mb-35 col-xl-7 col-lg-9 color-heading text-adaptive description"
               >
                 Asegúrate de revisar nuestros
-                <a href="#" class="link color-heading">Términos de Uso</a> y
-                <a href="#" class="link color-heading"
+                <a href="{% url 'terminos_de_uso' %}" class="link color-heading"
+                  >Términos de Uso</a
+                >
+                y
+                <a
+                  href="{% url 'politica_de_privacidad' %}"
+                  class="link color-heading"
                   >Política de Privacidad</a
                 >
               </div>
@@ -702,10 +732,16 @@
               >
                 <div class="mb-35 f-18 semibold title">Información</div>
                 <div class="mb-10">
-                  <a href="#" class="link color-main">Privacidad</a>
+                  <a
+                    href="{% url 'politica_de_privacidad' %}"
+                    class="link color-main"
+                    >Privacidad</a
+                  >
                 </div>
                 <div class="mb-10">
-                  <a href="#" class="link color-main">Soporte</a>
+                  <a href="{% url 'terminos_de_uso' %}" class="link color-main"
+                    >Soporte</a
+                  >
                 </div>
                 <div class="mb-10">
                   <a href="#" class="link color-main">Centro de Ayuda</a>
@@ -750,86 +786,5 @@
         </div>
       </div>
     </footer>
-
-    <!-- forms alerts -->
-    <div
-      class="alert alert-success alert-dismissible alert-form-success"
-      role="alert"
-    >
-      <button
-        type="button"
-        class="close"
-        data-dismiss="alert"
-        aria-label="Close"
-      >
-        <span aria-hidden="true">&times;</span>
-      </button>
-      Thanks for your message!
-    </div>
-    <div
-      class="alert alert-warning alert-dismissible alert-form-check-fields"
-      role="alert"
-    >
-      <button
-        type="button"
-        class="close"
-        data-dismiss="alert"
-        aria-label="Close"
-      >
-        <span aria-hidden="true">&times;</span>
-      </button>
-      Please, fill in required fields.
-    </div>
-    <div
-      class="alert alert-danger alert-dismissible alert-form-error"
-      role="alert"
-    >
-      <button
-        type="button"
-        class="close"
-        data-dismiss="alert"
-        aria-label="Close"
-      >
-        <span aria-hidden="true">&times;</span>
-      </button>
-      An error occurred while sending data :(
-    </div>
-    <!-- popup with video -->
-    <div class="overlay"></div>
-
-    <div class="video_popup">
-      <a class="close">
-        <img
-          srcset="../../static/i/close_white@2x.png 2x"
-          src="../../static/i/close_white.png"
-          alt=""
-        />
-      </a>
-      <div
-        class="d-flex align-items-center justify-content-center w-full h-full iframe_container"
-      ></div>
-    </div>
-
-    <!-- Bootstrap 4.3.1 JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-    <!-- Fancybox 3 jQuery plugin JS (Open images and video in popup) -->
-    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-    <!-- Google maps JS API -->
-    <script
-      type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDP6Ex5S03nvKZJZSvGXsEAi3X_tFkua4U"
-    ></script>
-    <!-- Slick 1.8.1 jQuery plugin JS (Sliders) -->
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
-    ></script>
-    <!-- AOS 2.3.1 jQuery plugin JS (Animations) -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- Maskedinput jQuery plugin JS (Masks for input fields) -->
-    <script src="../../static/js/jquery.maskedinput.min.js"></script>
-    <!-- Startup 3 JS (Custom js for all blocks) -->
-    <script src="../../static/js/script.js"></script>
-    {% block content %}{% endblock %}
   </body>
 </html>

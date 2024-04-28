@@ -1,6 +1,5 @@
 from django.shortcuts import render
 
-
 def terminos_de_uso(request):
     return render(request, 'legal/terminos_de_uso.html')
 
