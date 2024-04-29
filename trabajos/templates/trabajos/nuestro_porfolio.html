@@ -1,12 +1,142 @@
 {% extends 'partials/base.html' %}
 
 {% block title %}
-    <title>Marcas</title>
+    <title>Nuestro Porfolio</title>
+{% endblock %}
+
+{% block styles %}
+    <style>
+        /* Estilos para la sección de porfolio */
+        .portfolio-section {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #e9ecef;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .portfolio-section h2 {
+            color: #343a40;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        /* Estilos para las tarjetas de repositorio */
+        .portfolio-card {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .portfolio-card h3 {
+            color: #495057;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-card p {
+            color: #6c757d;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-card a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        /* Estilos para las imágenes de vista previa del repositorio */
+        .portfolio-card img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        /* Estilos para el logotipo de GitHub */
+        .portfolio-card a img {
+            width: 150px;
+            height: auto;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+    </style>
 {% endblock %}
 
 {% block content %}
-    <!-- Contenido especifico -->
-    <div class="mt-1 ml-5 f-16">
-        <p>Espacio para detallar los trabajos realizados en Data</p>
+    <!-- Contenido específico -->
+    <div class="portfolio-section">
+        <h2>Nuestro Porfolio</h2>
+        <div class="portfolio-card">
+            <h3>Exploratory Data Analysis with Python</h3>
+            <p>Un recopilado de distintas tecnicas de EDA aplicadas a un caso de uso con el objetivo de mostrar las
+                potencialidades de Python para hacer EDA</p>
+            <img src="../../../static/i/repo1-preview.png" alt="Vista previa del Repositorio 1">
+            <a href="https://github.com/Mgobeaalcoba/exploratory_data_analysis_with_python/tree/main" target="_blank">
+                <img src="../../../static/i/github_logo.png" alt='GitHub Logo'>
+            </a>
+        </div>
+        <div class="portfolio-card">
+            <h3>Inferential Statistics with Python</h3>
+            <p>Distintos ejemplos aplicados a un caso de como Python nos brinda grandes herramientas de estadística
+                inferencial que nos permitirán conocer el comportamiento futuro probable de nuestros productos o
+                servicios</p>
+            <img src="../../../static/i/repo2-preview.png" alt="Vista previa del Repositorio 2">
+            <a href="https://github.com/Mgobeaalcoba/Inferential_statistics_with_python" target="_blank">
+                <img src="../../../static/i/github_logo.png" alt='GitHub Logo'>
+            </a>
+        </div>
+        <div class="portfolio-card">
+            <h3>Selenium Python</h3>
+            <p>Uso de selenium para probar flujos en páginas web productivas y para realizar scraping de datos para
+                analizar el mercado o la competencia.</p>
+            <img src="../../../static/i/repo3-preview.png" alt="Vista previa del Repositorio 2">
+            <a href="https://github.com/Mgobeaalcoba/selenium_python" target="_blank">
+                <img src="../../../static/i/github_logo.png" alt='GitHub Logo'>
+            </a>
+        </div>
+        <div class="portfolio-card">
+            <h3>Padawan Python Course</h3>
+            <p>Curso de Python para análisis de datos armado y dictado por Mariano Gobea Alcoba durante 2023 para más de
+                100 miembros de Mercado Libre. Contar con el personal de nuestra compañia con capacidades analíticas
+                fuertes es fundamental si queremos aprovechar lo que los datos tienen para decirnos.</p>
+            <img src="../../../static/i/repo4-preview.png" alt="Vista previa del Repositorio 2">
+            <a href="https://github.com/Mgobeaalcoba/padawan_python_course" target="_blank">
+                <img src="../../../static/i/github_logo.png" alt='GitHub Logo'>
+            </a>
+        </div>
+        <div class="portfolio-card">
+            <h3>All Python for Everybody</h3>
+            <p>Un curso de Python absolutamente completo. Para aquellos que no se aprendieron a analizar datos con
+                Python pero no se conforman y ahora quieren aprender a hacer una Web App, un videojuego, hacer Web
+                Scrapping, un asistente guiado por voz, un software de reconocimiento fácil, etc. </p>
+            <img src="../../../static/i/repo5-preview.png" alt="Vista previa del Repositorio 2">
+            <a href="https://github.com/Mgobeaalcoba/all_python_for_everybody_my_course" target="_blank">
+                <img src="../../../static/i/github_logo.png" alt='GitHub Logo'>
+            </a>
+        </div>
+        <div class="portfolio-card">
+            <h3>Titanic Survival Predictor using Scikit Learn of Python</h3>
+            <p>Este proyecto fue creado en Google Colab y utiliza técnicas de aprendizaje automático para predecir la
+                supervivencia de los pasajeros del Titanic basándose en datos históricos. El modelo logró una precisión
+                del 81,5%.</p>
+            <img src="../../../static/i/repo6-preview.png" alt="Vista previa del Repositorio 2">
+            <a href="https://github.com/Mgobeaalcoba/survival_predictor_on_the_titanic_scikit_learn" target="_blank">
+                <img src="../../../static/i/github_logo.png" alt='GitHub Logo'>
+            </a>
+        </div>
+        <div class="portfolio-card">
+            <h3>Datacademy Challenge</h3>
+            <p>Proyecto de análisis exploratorio de datos (EDA) realizado que funcionó como un modelo para un concurso
+                en el que este trabajo fue seleccionado entre los 10 mejores con más de 1500 participantes.
+                <img src="../../../static/i/repo7-preview.png" alt="Vista previa del Repositorio 2">
+                <a href="https://github.com/Mgobeaalcoba/datacademy" target="_blank">
+                    <img src="../../../static/i/github_logo.png" alt='GitHub Logo'>
+                </a>
+        </div>
     </div>
 {% endblock %}
