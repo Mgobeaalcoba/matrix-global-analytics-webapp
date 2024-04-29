@@ -37,8 +37,7 @@
         /* Estilos específicos para cada subsección */
         .ceo-description,
         .ceo-experience,
-        .ceo-education,
-        .ceo-skills {
+        .ceo-education {
             border-top: 1px solid #dee2e6;
             padding-top: 20px;
         }
@@ -84,7 +83,13 @@
         @media (max-width: 768px) {
             .ceo-info {
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: center;
+            }
+
+            .ceo-info h2,
+            .ceo-info h3 {
+                /* centrar los textos */
+                text-align: center;
             }
 
             .ceo-description ul {
@@ -101,7 +106,7 @@
 {% endblock %}
 
 {% block content %}
-    <!-- Contenido especifico -->
+    <!-- Contenido específico -->
     <!-- Sección CEO -->
     <div class="ceo-section">
         <!-- Div para la foto, título y nombre -->
@@ -183,7 +188,7 @@
                         </ul>
                         <li>Backend Tasks:</li>
                         <ul>
-                            <li>Construcción de Rest API desde cero para forenseizar casos de transacciones de inicio de
+                            <li>Construcción de Rest API desde cero para forensiar casos de transacciones de inicio de
                                 sesión exitosas y fallidas y poder automatizar decisiones en departamentos como CX,
                                 Prevención de Fraude o GIN.
                             </li>
