@@ -1,546 +1,182 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Términos de Uso</title>
-    <!-- Static Files -->
-    {% load static %}
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{% static 'css/styles.css' %}"
-    />
-    <script src="{% static 'js/script.js' %}"></script>
-    <link
-      rel="icon"
-      href="{% static 'i/logo-sin-fondo.png' %}"
-      type="image/x-icon"
-    />
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Nunito+Sans:100,200,300,400,600,500,700,800,900|Nunito:100,200,300,400,500,600,700,800,900&amp;subset=latin"
-      rel="stylesheet"
-    />
-    <!-- Bootstrap 4.3.1 CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <!-- Slick 1.8.1 jQuery plugin CSS (Sliders) -->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
-    />
-    <!-- Fancybox 3 jQuery plugin CSS (Open images and video in popup) -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"
-    />
-    <!-- AOS 2.3.1 jQuery plugin CSS (Animations) -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <!-- FontAwesome CSS -->
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
-    <!-- jQuery 3.3.1 -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+{% extends 'partials/base.html' %}
 
-    <!-- Estaba al final del body el contenido de abajo en el home. Veamos como performa acá -->
+{% block title %}
+    <title>Marcas</title>
+{% endblock %}
 
-    <!-- Bootstrap 4.3.1 JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-    <!-- Fancybox 3 jQuery plugin JS (Open images and video in popup) -->
-    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-    <!-- Google maps JS API -->
-    <script
-      type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDP6Ex5S03nvKZJZSvGXsEAi3X_tFkua4U"
-    ></script>
-    <!-- Slick 1.8.1 jQuery plugin JS (Sliders) -->
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
-    ></script>
-    <!-- AOS 2.3.1 jQuery plugin JS (Animations) -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- Maskedinput jQuery plugin JS (Masks for input fields) -->
-    <script src="../../static/js/jquery.maskedinput.min.js"></script>
-    <!-- Startup 3 JS (Custom js for all blocks) -->
-    <script src="../../static/js/script.js"></script>
-
+{% block styles %}
     <!-- Estilos para los términos y condiciones -->
     <style>
-      .terms-container {
-        background-color: #f5f5f5;
-        padding: 20px;
-        border-radius: 10px;
-        margin-bottom: 20px;
-        margin-top: 20px;
-      }
-
-      .terms-title {
-        font-size: 24px;
-        color: #333;
-        margin-bottom: 10px;
-      }
-
-      .terms-text {
-        font-size: 16px;
-        color: #666;
-      }
-
-      .terms-list {
-        margin-bottom: 20px;
-      }
-
-      .terms-list-item {
-        margin-bottom: 10px;
-        list-style-type: disc;
-        margin-left: 20px;
-      }
-    </style>
-
-    <!-- Estilos para el Header 16 -->
-    <style>
-      .header_16 {
-        background-image: url(../../static/i/header_16_bg.jpg);
-      }
-      @media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
-        .header_16 {
-          background-image: url(../../static/i/header_16_bg.jpg);
+        .terms-container {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            margin-top: 20px;
         }
-      }
+
+        .terms-title {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .terms-text {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .terms-list {
+            margin-bottom: 20px;
+        }
+
+        .terms-list-item {
+            margin-bottom: 10px;
+            list-style-type: disc;
+            margin-left: 20px;
+        }
     </style>
-  </head>
+{% endblock %}
 
-  <body>
-    <!-- Header -->
-    <!-- Navigation Mobile type 2 -->
-    <a class="open_menu color-main bg-light radius_full"
-      ><i class="fas fa-bars lh-40"></i
-    ></a>
-    <div class="navigation_mobile bg-light type2">
-      <a class="close_menu color-main"><i class="fas fa-times"></i></a>
-      <div class="px-40 pt-60 pb-60 text-center inner">
-        <div>
-          <a href="/" class="f-heading f-22 link color-main mb-20">Home</a>
-        </div>
-
-        <div>
-          <a href="#" class="f-heading f-22 link color-main mb-20">Precios</a>
-        </div>
-
-        <div>
-          <a href="#" class="f-heading f-22 link color-main mb-20"
-            >¿Quienes somos?</a
-          >
-        </div>
-
-        <div>
-          <a href="#" class="f-heading f-22 link color-main mb-20"
-            >Preguntas Frecuentes</a
-          >
-        </div>
-
-        <div>
-          <a
-            href="{% url 'formulario_contacto' %}"
-            class="f-heading f-22 link color-main mb-20"
-            >Contactanos</a
-          >
-        </div>
-        <div>
-          <a
-            href="mailto:gobeamariano@gmail.com?subject=Estoy%20interesado/a%20en%20tus%20servicios%20profesionales"
-            class="f-12 link color-main op-7 text-uppercase sp-20 mb-20"
-            >Email</a
-          >
-        </div>
-        <div>
-          <a
-            href="https://datageekguru.blogspot.com/"
-            class="f-12 link color-main op-7 text-uppercase sp-20 mb-20"
-            >Blog</a
-          >
-        </div>
-        <div>
-          <a
-            href="#"
-            class="f-12 link color-main op-7 text-uppercase sp-20 mb-20"
-            >Trabaja con Nosotros</a
-          >
-        </div>
-        <div class="socials mt-60">
-          <a href="#" target="_blank" class="link color-main f-18 mx-10"
-            ><i class="fab fa-twitter"></i
-          ></a>
-          <a href="#" target="_blank" class="link color-main f-18 mx-10"
-            ><i class="fab fa-instagram"></i
-          ></a>
-          <a
-            href="https://www.linkedin.com/in/mariano-gobea-alcoba/"
-            target="_blank"
-            class="link color-main f-18 mx-10"
-            ><i class="fab fa-linkedin"></i
-          ></a>
-          <a
-            href="mailto:gobeamariano@gmail.com?subject=Estoy%20interesado/a%20en%20tus%20servicios%20profesionales"
-            target="_blank"
-            class="link color-main f-18 mx-10"
-            ><i class="fa fa-envelope"></i
-          ></a>
-        </div>
-      </div>
-    </div>
-
-    <header class="pt-100 pb-50 header_16">
-      <!-- Header Menu 16 -->
-      <nav class="header_menu_16 pt-30 pb-30 mt-15">
-        <div class="container px-xl-0">
-          <div class="row justify-content-center">
-            <div
-              class="col-xl-10"
-              data-aos-duration="600"
-              data-aos="fade-down"
-              data-aos-delay="1200"
-            >
-              <div class="row align-items-baseline">
-                <div class="col-lg-18 d-flex align-items-center f-18 medium">
-                  <a href="/" class="mx-15 link color-white"
-                    ><img
-                      src="{% static 'i/logo-sin-fondo.png' %}"
-                      alt="Logo"
-                      class="mx-15 logo-image"
-                      width="50"
-                      height="50"
-                  /></a>
-                  <div class="mx-15 logo color-white">
-                    <a href="/" class="mx-15 link color-white"
-                      >Matrix Global Analytics</a
-                    >
-                  </div>
-                  <a href="#" class="mx-15 link color-white">Precios</a>
-                  <a href="/quienes-somos/" class="mx-15 link color-white">¿Quiénes somos?</a>
-                  <a href="#" class="mx-15 link color-white"
-                    >Preguntas Frecuentes</a
-                  >
-                  <a
-                    href="{% url 'formulario_contacto' %}"
-                    class="mx-15 link color-white"
-                    >Contáctenos</a
-                  >
-                  <a href="#" class="mx-30 btn sm action-3">Comprar</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </header>
-
+{% block content %}
     <!-- Contenido especifico de Terminos de Uso -->
     <!-- Términos y condiciones en español -->
     <div class="terms-container">
-      <h2 class="terms-title">Términos y Condiciones de Uso del Sitio Web</h2>
-      <div class="terms-text">
-        <p>
-          Bienvenido a nuestro sitio web. Si continúa navegando y utilizando
-          este sitio web, acepta cumplir y quedar obligado por los siguientes
-          términos y condiciones de uso, que junto con nuestra política de
-          privacidad rigen la relación de Matrix Global Analytics con usted en
-          relación con este sitio web. Si no está de acuerdo con alguna parte de
-          estos términos y condiciones, por favor no utilice nuestro sitio web.
-        </p>
-        <ul class="terms-list">
-          <li class="terms-list-item">
-            El contenido de las páginas de este sitio web es para su información
-            general y uso solamente. Está sujeto a cambios sin previo aviso.
-          </li>
-          <li class="terms-list-item">
-            Este sitio web utiliza cookies para monitorear las preferencias de
-            navegación. Si permite que se utilicen cookies, la siguiente
-            información personal puede ser almacenada por nosotros para uso
-            propio responsable o uso de terceros autorizados por nosotros.
-          </li>
-          <li class="terms-list-item">
-            Ni nosotros ni terceros proporcionamos ninguna garantía o garantía
-            en cuanto a la precisión, puntualidad, rendimiento, integridad o
-            idoneidad de la información y materiales encontrados o ofrecidos en
-            este sitio web para ningún propósito particular. Usted reconoce que
-            tal información y materiales pueden contener inexactitudes o errores
-            y excluimos expresamente la responsabilidad por tales inexactitudes
-            o errores en la máxima medida permitida por la ley.
-          </li>
-          <li class="terms-list-item">
-            Su uso de cualquier información o materiales en este sitio web es
-            totalmente bajo su propio riesgo, para lo cual no seremos
-            responsables. Será su responsabilidad asegurarse de que cualquier
-            producto, servicio o información disponible a través de este sitio
-            web cumpla con sus requisitos específicos.
-          </li>
-          <li class="terms-list-item">
-            Este sitio web contiene material que es propiedad de nosotros o que
-            está licenciado para nosotros. Este material incluye, entre otros,
-            el diseño, la disposición, la apariencia y los gráficos. La
-            reproducción está prohibida excepto de acuerdo con el aviso de
-            derechos de autor, que forma parte de estos términos y condiciones.
-          </li>
-          <li class="terms-list-item">
-            Se reconocen todas las marcas comerciales reproducidas en este sitio
-            web, que no son propiedad del operador o están licenciadas al
-            operador.
-          </li>
-          <li class="terms-list-item">
-            El uso no autorizado de este sitio web puede dar lugar a una
-            reclamación por daños y perjuicios y / o ser un delito.
-          </li>
-          <li class="terms-list-item">
-            De vez en cuando, este sitio web también puede incluir enlaces a
-            otros sitios web. Estos enlaces se proporcionan para su conveniencia
-            para proporcionar más información. No significan que respaldemos el
-            (los) sitio (s) web. No tenemos responsabilidad por el contenido del
-            (los) sitio (s) web vinculado (s).
-          </li>
-          <li class="terms-list-item">
-            Su uso de este sitio web y cualquier disputa que surja de dicho uso
-            del sitio web está sujeto a las leyes de Argentina.
-          </li>
-        </ul>
-      </div>
+        <h2 class="terms-title">Términos y Condiciones de Uso del Sitio Web</h2>
+        <div class="terms-text">
+            <p>
+                Bienvenido a nuestro sitio web. Si continúa navegando y utilizando
+                este sitio web, acepta cumplir y quedar obligado por los siguientes
+                términos y condiciones de uso, que junto con nuestra política de
+                privacidad rigen la relación de Matrix Global Analytics con usted en
+                relación con este sitio web. Si no está de acuerdo con alguna parte de
+                estos términos y condiciones, por favor no utilice nuestro sitio web.
+            </p>
+            <ul class="terms-list">
+                <li class="terms-list-item">
+                    El contenido de las páginas de este sitio web es para su información
+                    general y uso solamente. Está sujeto a cambios sin previo aviso.
+                </li>
+                <li class="terms-list-item">
+                    Este sitio web utiliza cookies para monitorear las preferencias de
+                    navegación. Si permite que se utilicen cookies, la siguiente
+                    información personal puede ser almacenada por nosotros para uso
+                    propio responsable o uso de terceros autorizados por nosotros.
+                </li>
+                <li class="terms-list-item">
+                    Ni nosotros ni terceros proporcionamos ninguna garantía o garantía
+                    en cuanto a la precisión, puntualidad, rendimiento, integridad o
+                    idoneidad de la información y materiales encontrados o ofrecidos en
+                    este sitio web para ningún propósito particular. Usted reconoce que
+                    tal información y materiales pueden contener inexactitudes o errores
+                    y excluimos expresamente la responsabilidad por tales inexactitudes
+                    o errores en la máxima medida permitida por la ley.
+                </li>
+                <li class="terms-list-item">
+                    Su uso de cualquier información o materiales en este sitio web es
+                    totalmente bajo su propio riesgo, para lo cual no seremos
+                    responsables. Será su responsabilidad asegurarse de que cualquier
+                    producto, servicio o información disponible a través de este sitio
+                    web cumpla con sus requisitos específicos.
+                </li>
+                <li class="terms-list-item">
+                    Este sitio web contiene material que es propiedad de nosotros o que
+                    está licenciado para nosotros. Este material incluye, entre otros,
+                    el diseño, la disposición, la apariencia y los gráficos. La
+                    reproducción está prohibida excepto de acuerdo con el aviso de
+                    derechos de autor, que forma parte de estos términos y condiciones.
+                </li>
+                <li class="terms-list-item">
+                    Se reconocen todas las marcas comerciales reproducidas en este sitio
+                    web, que no son propiedad del operador o están licenciadas al
+                    operador.
+                </li>
+                <li class="terms-list-item">
+                    El uso no autorizado de este sitio web puede dar lugar a una
+                    reclamación por daños y perjuicios y / o ser un delito.
+                </li>
+                <li class="terms-list-item">
+                    De vez en cuando, este sitio web también puede incluir enlaces a
+                    otros sitios web. Estos enlaces se proporcionan para su conveniencia
+                    para proporcionar más información. No significan que respaldemos el
+                    (los) sitio (s) web. No tenemos responsabilidad por el contenido del
+                    (los) sitio (s) web vinculado (s).
+                </li>
+                <li class="terms-list-item">
+                    Su uso de este sitio web y cualquier disputa que surja de dicho uso
+                    del sitio web está sujeto a las leyes de Argentina.
+                </li>
+            </ul>
+        </div>
     </div>
 
     <!-- Términos y condiciones en inglés -->
     <div class="terms-container">
-      <h2 class="terms-title">Website Usage Terms and Conditions</h2>
-      <div class="terms-text">
-        <p>
-          Welcome to our website. If you continue to browse and use this
-          website, you are agreeing to comply with and be bound by the following
-          terms and conditions of use, which together with our privacy policy
-          govern Matrix Global Analytics's relationship with you in relation to
-          this website. If you disagree with any part of these terms and
-          conditions, please do not use our website.
-        </p>
-        <ul class="terms-list">
-          <li class="terms-list-item">
-            The content of the pages of this website is for your general
-            information and use only. It is subject to change without notice.
-          </li>
-          <li class="terms-list-item">
-            This website uses cookies to monitor the preferences of navigation.
-            If you allow cookies to be used, the following personal information
-            may be stored by us for use own responsible or use of third parties
-            authorized by us.
-          </li>
-          <li class="terms-list-item">
-            Neither we nor any third parties provide any warranty or guarantee
-            as to the accuracy, timeliness, performance, completeness or
-            suitability of the information and materials found or offered on
-            this website for any particular purpose. You acknowledge that such
-            information and materials may contain inaccuracies or errors and we
-            expressly exclude liability for any such inaccuracies or errors to
-            the fullest extent permitted by law.
-          </li>
-          <li class="terms-list-item">
-            Your use of any information or materials on this website is entirely
-            at your own risk, for which we shall not be liable. It shall be your
-            own responsibility to ensure that any products, services or
-            information available through this website meet your specific
-            requirements.
-          </li>
-          <li class="terms-list-item">
-            This website contains material which is owned by or licensed to us.
-            This material includes, but is not limited to, the design, layout,
-            look, appearance and graphics. Reproduction is prohibited other than
-            in accordance with the copyright notice, which forms part of these
-            terms and conditions.
-          </li>
-          <li class="terms-list-item">
-            All trademarks reproduced in this website, which are not the
-            property of, or licensed to the operator, are acknowledged on the
-            website.
-          </li>
-          <li class="terms-list-item">
-            Unauthorised use of this website may give rise to a claim for
-            damages and/or be a criminal offence.
-          </li>
-          <li class="terms-list-item">
-            From time to time, this website may also include links to other
-            websites. These links are provided for your convenience to provide
-            further information. They do not signify that we endorse the
-            website(s). We have no responsibility for the content of the linked
-            website(s).
-          </li>
-          <li class="terms-list-item">
-            Your use of this website and any dispute arising out of such use of
-            the website is subject to the laws of Argentina.
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer_3 bg-light pt-100 pb-100 text-center text-lg-left">
-      <div class="container px-xl-0">
-        <div class="row">
-          <div class="col-xl-1"></div>
-          <div
-            class="mb-50 mb-lg-0 col-lg-4"
-            data-aos-duration="600"
-            data-aos="fade-down"
-            data-aos-delay="0"
-          >
-            <div class="row">
-              <div class="col-12">
-                <img
-                  src="{% static 'i/logo-sin-fondo.png' %}"
-                  alt="Logo"
-                  class="mx-15 logo-image"
-                  width="30"
-                  height="30"
-                />
-                <a href="#" class="logo link color-main"
-                  >Matrix Global Analytics</a
-                >
-              </div>
-              <div
-                class="mt-30 mb-35 col-xl-7 col-lg-9 color-heading text-adaptive description"
-              >
-                Asegúrate de revisar nuestros
-                <a href="{% url 'terminos_de_uso' %}" class="link color-heading"
-                  >Términos de Uso</a
-                >
-                y
-                <a
-                  href="{% url 'politica_de_privacidad' %}"
-                  class="link color-heading"
-                  >Política de Privacidad</a
-                >
-              </div>
-              <div class="col-12 socials">
-                <a href="#" class="f-18 link color-main mr-30"
-                  ><i class="fab fa-twitter"></i
-                ></a>
-                <a href="#" class="f-18 link color-main mr-30"
-                  ><i class="fab fa-instagram"></i
-                ></a>
-                <a
-                  href="https://www.linkedin.com/in/mariano-gobea-alcoba/"
-                  class="f-18 link color-main mr-30"
-                  ><i class="fab fa-linkedin"></i
-                ></a>
-                <a
-                  href="mailto:gobeamariano@gmail.com?subject=Estoy%20interesado/a%20en%20tus%20servicios%20profesionales"
-                  class="f-18 link color-main"
-                  ><i class="fa fa-envelope"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-7 col-lg-8">
-            <div class="row no-gutters">
-              <div
-                class="col-md-3 col-6 mb-50 mb-md-0"
-                data-aos-duration="600"
-                data-aos="fade-down"
-                data-aos-delay="150"
-              >
-                <div class="mb-35 f-18 semibold title">Producto</div>
-                <div class="mb-10">
-                  <a href="#" class="link color-main">Características</a>
-                </div>
-                <div class="mb-10">
-                  <a href="#" class="link color-main">Precios</a>
-                </div>
-                <div class="mb-10">
-                  <a href="#" class="link color-main">Tour</a>
-                </div>
-              </div>
-              <div
-                class="col-md-3 col-6 mb-50 mb-md-0"
-                data-aos-duration="600"
-                data-aos="fade-down"
-                data-aos-delay="300"
-              >
-                <div class="mb-35 f-18 semibold title">Trabajo</div>
-                <div class="mb-10">
-                  <a href="/nuestro-porfolio/" class="link color-main">Nuestro Portafolio</a>
-                </div>
-                <div class="mb-10">
-                  <a href="/ultimos-proyectos/" class="link color-main">Últimos Proyectos</a>
-                </div>
-                <div class="mb-10">
-                  <a href="/marcas/" class="link color-main">Marcas</a>
-                </div>
-              </div>
-              <div
-                class="col-md-3 col-6"
-                data-aos-duration="600"
-                data-aos="fade-down"
-                data-aos-delay="450"
-              >
-                <div class="mb-35 f-18 semibold title">Información</div>
-                <div class="mb-10">
-                  <a
-                    href="{% url 'politica_de_privacidad' %}"
-                    class="link color-main"
-                    >Privacidad</a
-                  >
-                </div>
-                <div class="mb-10">
-                  <a href="{% url 'terminos_de_uso' %}" class="link color-main"
-                    >Soporte</a
-                  >
-                </div>
-                <div class="mb-10">
-                  <a href="#" class="link color-main">Centro de Ayuda</a>
-                </div>
-                <div class="mb-10">
-                  <a href="#" class="link color-main">FAQ</a>
-                </div>
-              </div>
-              <div
-                class="col-md-3 col-6"
-                data-aos-duration="600"
-                data-aos="fade-down"
-                data-aos-delay="600"
-              >
-                <div class="mb-35 f-18 semibold title">Acerca de</div>
-                <div class="mb-10">
-                  <a href="#" class="link color-main">Sobre Nosotros</a>
-                </div>
-                <div class="mb-10">
-                  <a
-                    href="https://datageekguru.blogspot.com/"
-                    class="link color-main"
-                    >Blog</a
-                  >
-                </div>
-                <div class="mb-10">
-                  <a href="#" class="link color-main">Equipo</a>
-                </div>
-                <div class="mb-10">
-                  <a href="#" class="link color-main">Carrera</a>
-                </div>
-                <div class="mb-10">
-                  <a
-                    href="{% url 'formulario_contacto' %}"
-                    class="link color-main"
-                    >Contacto</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
+        <h2 class="terms-title">Website Usage Terms and Conditions</h2>
+        <div class="terms-text">
+            <p>
+                Welcome to our website. If you continue to browse and use this
+                website, you are agreeing to comply with and be bound by the following
+                terms and conditions of use, which together with our privacy policy
+                govern Matrix Global Analytics's relationship with you in relation to
+                this website. If you disagree with any part of these terms and
+                conditions, please do not use our website.
+            </p>
+            <ul class="terms-list">
+                <li class="terms-list-item">
+                    The content of the pages of this website is for your general
+                    information and use only. It is subject to change without notice.
+                </li>
+                <li class="terms-list-item">
+                    This website uses cookies to monitor the preferences of navigation.
+                    If you allow cookies to be used, the following personal information
+                    may be stored by us for use own responsible or use of third parties
+                    authorized by us.
+                </li>
+                <li class="terms-list-item">
+                    Neither we nor any third parties provide any warranty or guarantee
+                    as to the accuracy, timeliness, performance, completeness or
+                    suitability of the information and materials found or offered on
+                    this website for any particular purpose. You acknowledge that such
+                    information and materials may contain inaccuracies or errors and we
+                    expressly exclude liability for any such inaccuracies or errors to
+                    the fullest extent permitted by law.
+                </li>
+                <li class="terms-list-item">
+                    Your use of any information or materials on this website is entirely
+                    at your own risk, for which we shall not be liable. It shall be your
+                    own responsibility to ensure that any products, services or
+                    information available through this website meet your specific
+                    requirements.
+                </li>
+                <li class="terms-list-item">
+                    This website contains material which is owned by or licensed to us.
+                    This material includes, but is not limited to, the design, layout,
+                    look, appearance and graphics. Reproduction is prohibited other than
+                    in accordance with the copyright notice, which forms part of these
+                    terms and conditions.
+                </li>
+                <li class="terms-list-item">
+                    All trademarks reproduced in this website, which are not the
+                    property of, or licensed to the operator, are acknowledged on the
+                    website.
+                </li>
+                <li class="terms-list-item">
+                    Unauthorised use of this website may give rise to a claim for
+                    damages and/or be a criminal offence.
+                </li>
+                <li class="terms-list-item">
+                    From time to time, this website may also include links to other
+                    websites. These links are provided for your convenience to provide
+                    further information. They do not signify that we endorse the
+                    website(s). We have no responsibility for the content of the linked
+                    website(s).
+                </li>
+                <li class="terms-list-item">
+                    Your use of this website and any dispute arising out of such use of
+                    the website is subject to the laws of Argentina.
+                </li>
+            </ul>
         </div>
-      </div>
-    </footer>
-  </body>
-</html>
+    </div>
+{% endblock %}
