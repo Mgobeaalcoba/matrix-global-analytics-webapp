@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+        <title>MGA Home</title>
+    {% endblock %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block static %}
+        <!-- Static Files -->
+        {% load static %}
+        <link
+                rel="stylesheet"
+                type="text/css"
+                href="{% static 'css/styles.css' %}"
+        />
+        <script src="{% static 'js/script.js' %}"></script>
+        <link
+                rel="icon"
+                href="{% static 'i/logo-sin-fondo.png' %}"
+                type="image/x-icon"
+        />
+        <!-- Google Fonts -->
+        <link
+                href="https://fonts.googleapis.com/css?family=Nunito+Sans:100,200,300,400,600,500,700,800,900|Nunito:100,200,300,400,500,600,700,800,900&amp;subset=latin"
+                rel="stylesheet"
+        />
+        <!-- Bootstrap 4.3.1 CSS -->
+        <link
+                rel="stylesheet"
+                href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+                integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+                crossorigin="anonymous"
+        />
+        <!-- Slick 1.8.1 jQuery plugin CSS (Sliders) -->
+        <link
+                rel="stylesheet"
+                type="text/css"
+                href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+        />
+        <!-- Fancybox 3 jQuery plugin CSS (Open images and video in popup) -->
+        <link
+                rel="stylesheet"
+                href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"
+        />
+        <!-- AOS 2.3.1 jQuery plugin CSS (Animations) -->
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+        <!-- FontAwesome CSS -->
+        <link
+                rel="stylesheet"
+                href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+                integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+                crossorigin="anonymous"
+        />
+        <!-- jQuery 3.3.1 -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+        <!-- Estaba al final pero lo llevo al head a ver como responde -->
+
+        <!-- Bootstrap 4.3.1 JS -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+        <!-- Fancybox 3 jQuery plugin JS (Open images and video in popup) -->
+        <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+        <!-- Google maps JS API -->
+        <script
+                type="text/javascript"
+                src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDP6Ex5S03nvKZJZSvGXsEAi3X_tFkua4U"
+        ></script>
+        <!-- Slick 1.8.1 jQuery plugin JS (Sliders) -->
+        <script
+                type="text/javascript"
+                src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+        ></script>
+        <!-- AOS 2.3.1 jQuery plugin JS (Animations) -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <!-- Maskedinput jQuery plugin JS (Masks for input fields) -->
+        <script src="../../static/js/jquery.maskedinput.min.js"></script>
+        <!-- Startup 3 JS (Custom js for all blocks) -->
+        <script src="../../static/js/script.js"></script>
+        <!-- Estilos para el Header 16 -->
+        <style>
+            .header_16 {
+                background-image: url(../../static/i/header_16_bg.jpg);
+            }
+
+            @media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+                .header_16 {
+                    background-image: url(../../static/i/header_16_bg.jpg);
+                }
+            }
+        </style>
+    {% endblock %}
+</head>
+<body>
+{% block headers %}
+    <!-- Header -->
+    <!-- Navigation Mobile type 2 -->
+    <a class="open_menu color-main bg-light radius_full"
+    ><i class="fas fa-bars lh-40"></i
+    ></a>
+    <div class="navigation_mobile bg-light type2">
+        <a class="close_menu color-main"><i class="fas fa-times"></i></a>
+        <div class="px-40 pt-60 pb-60 text-center inner">
+            <div>
+                <a href="/" class="f-heading f-22 link color-main mb-20">Home</a>
+            </div>
+
+            <div>
+                <a href="#" class="f-heading f-22 link color-main mb-20">Precios</a>
+            </div>
+
+            <div>
+                <a href="#" class="f-heading f-22 link color-main mb-20"
+                >¿Quienes somos?</a
+                >
+            </div>
+
+            <div>
+                <a href="#" class="f-heading f-22 link color-main mb-20"
+                >Preguntas Frecuentes</a
+                >
+            </div>
+
+            <div>
+                <a
+                        href="{% url 'formulario_contacto' %}"
+                        class="f-heading f-22 link color-main mb-20"
+                >Contactanos</a
+                >
+            </div>
+            <div>
+                <a
+                        href="mailto:gobeamariano@gmail.com?subject=Estoy%20interesado/a%20en%20tus%20servicios%20profesionales"
+                        class="f-12 link color-main op-7 text-uppercase sp-20 mb-20"
+                >Email</a
+                >
+            </div>
+            <div>
+                <a
+                        href="https://datageekguru.blogspot.com/"
+                        class="f-12 link color-main op-7 text-uppercase sp-20 mb-20"
+                >Blog</a
+                >
+            </div>
+            <div>
+                <a
+                        href="#"
+                        class="f-12 link color-main op-7 text-uppercase sp-20 mb-20"
+                >Trabaja con Nosotros</a
+                >
+            </div>
+            <div class="socials mt-60">
+                <a href="#" target="_blank" class="link color-main f-18 mx-10"
+                ><i class="fab fa-twitter"></i
+                ></a>
+                <a href="#" target="_blank" class="link color-main f-18 mx-10"
+                ><i class="fab fa-instagram"></i
+                ></a>
+                <a
+                        href="https://www.linkedin.com/in/mariano-gobea-alcoba/"
+                        target="_blank"
+                        class="link color-main f-18 mx-10"
+                ><i class="fab fa-linkedin"></i
+                ></a>
+                <a
+                        href="mailto:gobeamariano@gmail.com?subject=Estoy%20interesado/a%20en%20tus%20servicios%20profesionales"
+                        target="_blank"
+                        class="link color-main f-18 mx-10"
+                ><i class="fa fa-envelope"></i
+                ></a>
+            </div>
+        </div>
+    </div>
+
+    <header class="pt-100 pb-50 header_16">
+        <!-- Header Menu 16 -->
+        <nav class="header_menu_16 pt-30 pb-30 mt-15">
+            <div class="container px-xl-0">
+                <div class="row justify-content-center">
+                    <div
+                            class="col-xl-10"
+                            data-aos-duration="600"
+                            data-aos="fade-down"
+                            data-aos-delay="1200"
+                    >
+                        <div class="row align-items-baseline">
+                            <div class="col-lg-18 d-flex align-items-center f-18 medium">
+                                <a href="/" class="mx-15 link color-white"
+                                ><img
+                                        src="{% static 'i/logo-sin-fondo.png' %}"
+                                        alt="Logo"
+                                        class="mx-15 logo-image"
+                                        width="50"
+                                        height="50"
+                                /></a>
+                                <div class="mx-15 logo color-white">
+                                    <a href="/" class="mx-15 link color-white"
+                                    >Matrix Global Analytics</a
+                                    >
+                                </div>
+                                <a href="#" class="mx-15 link color-white">Precios</a>
+                                <a href="/quienes-somos/" class="mx-15 link color-white">¿Quiénes somos?</a>
+                                <a href="#" class="mx-15 link color-white"
+                                >Preguntas Frecuentes</a
+                                >
+                                <a
+                                        href="{% url 'formulario_contacto' %}"
+                                        class="mx-15 link color-white"
+                                >Contáctenos</a
+                                >
+                                <a href="#" class="mx-30 btn sm action-3">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+{% endblock %}
+{% block content %}
+{% endblock %}
+{% block footer %}
+    <!-- Footer 3 -->
+    <footer class="footer_3 bg-light pt-100 pb-100 text-center text-lg-left">
+        <div class="container px-xl-0">
+            <div class="row">
+                <div class="col-xl-1"></div>
+                <div
+                        class="mb-50 mb-lg-0 col-lg-4"
+                        data-aos-duration="600"
+                        data-aos="fade-down"
+                        data-aos-delay="0"
+                >
+                    <div class="row">
+                        <div class="col-12">
+                            <a href="/" class="mx-15 link color-white"
+                            ><img
+                                    src="{% static 'i/logo-sin-fondo.png' %}"
+                                    alt="Logo"
+                                    class="mx-15 logo-image"
+                                    width="50"
+                                    height="50"
+                            /></a>
+                            <a href="/" class="logo link color-main"
+                            >Matrix Global Analytics</a
+                            >
+                        </div>
+                        <div
+                                class="mt-30 mb-35 col-xl-7 col-lg-9 color-heading text-adaptive description"
+                        >
+                            Asegúrate de revisar nuestros
+                            <a href="{% url 'terminos_de_uso' %}" class="link color-heading"
+                            >Términos de Uso</a
+                            >
+                            y
+                            <a
+                                    href="{% url 'politica_de_privacidad' %}"
+                                    class="link color-heading"
+                            >Política de Privacidad</a
+                            >
+                        </div>
+                        <div class="col-12 socials">
+                            <a href="#" class="f-18 link color-main mr-30"
+                            ><i class="fab fa-twitter"></i
+                            ></a>
+                            <a href="#" class="f-18 link color-main mr-30"
+                            ><i class="fab fa-instagram"></i
+                            ></a>
+                            <a
+                                    href="https://www.linkedin.com/in/mariano-gobea-alcoba/"
+                                    class="f-18 link color-main mr-30"
+                            ><i class="fab fa-linkedin"></i
+                            ></a>
+                            <a
+                                    href="mailto:gobeamariano@gmail.com?subject=Estoy%20interesado/a%20en%20tus%20servicios%20profesionales"
+                                    class="f-18 link color-main"
+                            ><i class="fa fa-envelope"></i
+                            ></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-7 col-lg-8">
+                    <div class="row no-gutters">
+                        <div
+                                class="col-md-3 col-6 mb-50 mb-md-0"
+                                data-aos-duration="600"
+                                data-aos="fade-down"
+                                data-aos-delay="150"
+                        >
+                            <div class="mb-35 f-18 semibold title">Producto</div>
+                            <div class="mb-10">
+                                <a href="#" class="link color-main">Características</a>
+                            </div>
+                            <div class="mb-10">
+                                <a href="#" class="link color-main">Precios</a>
+                            </div>
+                            <div class="mb-10">
+                                <a href="#" class="link color-main">Tour</a>
+                            </div>
+                        </div>
+                        <div
+                                class="col-md-3 col-6 mb-50 mb-md-0"
+                                data-aos-duration="600"
+                                data-aos="fade-down"
+                                data-aos-delay="300"
+                        >
+                            <div class="mb-35 f-18 semibold title">Trabajo</div>
+                            <div class="mb-10">
+                                <a href="/nuestro-porfolio/" class="link color-main">Nuestro Portafolio</a>
+                            </div>
+                            <div class="mb-10">
+                                <a href="/ultimos-proyectos/" class="link color-main">Últimos Proyectos</a>
+                            </div>
+                            <div class="mb-10">
+                                <a href="/marcas/" class="link color-main">Marcas</a>
+                            </div>
+                        </div>
+                        <div
+                                class="col-md-3 col-6"
+                                data-aos-duration="600"
+                                data-aos="fade-down"
+                                data-aos-delay="450"
+                        >
+                            <div class="mb-35 f-18 semibold title">Información</div>
+                            <div class="mb-10">
+                                <a
+                                        href="{% url 'politica_de_privacidad' %}"
+                                        class="link color-main"
+                                >Privacidad</a
+                                >
+                            </div>
+                            <div class="mb-10">
+                                <a href="{% url 'terminos_de_uso' %}" class="link color-main"
+                                >Soporte</a
+                                >
+                            </div>
+                            <div class="mb-10">
+                                <a href="#" class="link color-main">Centro de Ayuda</a>
+                            </div>
+                            <div class="mb-10">
+                                <a href="#" class="link color-main">FAQ</a>
+                            </div>
+                        </div>
+                        <div
+                                class="col-md-3 col-6"
+                                data-aos-duration="600"
+                                data-aos="fade-down"
+                                data-aos-delay="600"
+                        >
+                            <div class="mb-35 f-18 semibold title">Acerca de</div>
+                            <div class="mb-10">
+                                <a href="#" class="link color-main">Sobre Nosotros</a>
+                            </div>
+                            <div class="mb-10">
+                                <a
+                                        href="https://datageekguru.blogspot.com/"
+                                        class="link color-main"
+                                >Blog</a
+                                >
+                            </div>
+                            <div class="mb-10">
+                                <a href="#" class="link color-main">Equipo</a>
+                            </div>
+                            <div class="mb-10">
+                                <a href="#" class="link color-main">Carrera</a>
+                            </div>
+                            <div class="mb-10">
+                                <a
+                                        href="{% url 'formulario_contacto' %}"
+                                        class="link color-main"
+                                >Contacto</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock %}
+</body>
+</html>
+<!DOCTYPE html>
