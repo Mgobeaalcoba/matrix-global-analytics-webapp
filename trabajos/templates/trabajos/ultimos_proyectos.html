@@ -1,13 +1,85 @@
 {% extends 'partials/base.html' %}
 
 {% block title %}
-    <title>Marcas</title>
+    <title>Últimos Proyectos</title>
+{% endblock %}
+
+{% block styles %}
+    <style>
+        /* Estilos para la sección de porfolio */
+        .portfolio-section {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #e9ecef;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .portfolio-section h2 {
+            color: #343a40;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        /* Estilos para las tarjetas de repositorio */
+        .portfolio-card {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .portfolio-card h3 {
+            color: #495057;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-card p {
+            color: #6c757d;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-card a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        /* Estilos para las imágenes de vista previa del repositorio */
+        .portfolio-card img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        /* Estilos para el logotipo de GitHub */
+        .portfolio-card a img {
+            width: 150px;
+            height: auto;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+    </style>
 {% endblock %}
 
 {% block content %}
-    <!-- Contenido especifico -->
-    <div class="mt-1 ml-5 f-16">
-        <p>Un espacio para detallar los útlimos proyectos en los que hemos estado
-            trabajando</p>
+    <!-- Contenido específico -->
+    <div class="portfolio-section">
+        <h2>Últimos Proyectos realizados desde MGA</h2>
+        <div class="portfolio-card">
+            <h3>Data Lanes Python 2024</h3>
+            <p>Capacitación de 7 semanas dictada a para Mercado Libre donde partimos de optimización de consultas SQL, y
+                aprendemos Python para análisis de datos pasando por conceptos elementales y muy útiles de
+                Estadística</p>
+            <img src="../../../static/i/data-lanes.jpeg" alt="Vista previa del arranque del Data Lanes">
+            <a href="https://github.com/Mgobeaalcoba/padawan_python_course" target="_blank">
+                <img src="../../../static/i/github_logo.png" alt='GitHub Logo'>
+            </a>
+        </div>
     </div>
 {% endblock %}

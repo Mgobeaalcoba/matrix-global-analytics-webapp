@@ -4,9 +4,82 @@
     <title>Marcas</title>
 {% endblock %}
 
+{% block styles %}
+    <style>
+        /* Estilos para la sección de marcas */
+        .brands-section {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #e9ecef;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .brands-section h2 {
+            color: #343a40;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        /* Estilos para las tarjetas de marca */
+        .brand-card {
+            display: flex;
+            align-items: center;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .brand-card a {
+            color: #495057;
+            font-size: 1.5em;
+            margin-right: 20px;
+            width: 50%;
+            /* El texto debe ir en el centro horizontalmente */
+            text-align: center;
+        }
+
+        .brand-card img {
+            width: 50%;
+            height: auto;
+            border-radius: 20px;
+            /* La imagen debe ir en el centro horizontalmente */
+        }
+
+        /* Estilos para desktop */
+        @media (min-width: 768px) {
+            .brand-card img {
+                width: 25%;
+            }
+        }
+    </style>
+{% endblock %}
+
 {% block content %}
     <!-- Contenido especifico -->
-    <div class="mt-1 ml-5 f-16">
-        <p>Espacio para detallar marcas con las que hemos trabajado</p>
+    <div class="brands-section">
+        <h2>Marcas con las que hemos trabajado</h2>
+        <div class="brand-card">
+            <a href="https://www.mercadolibre.com">
+                <h3>Mercado Libre</h3>
+            </a>
+            <img src='../../../static/i/mercado-libre.jpg' alt='Logo de Mercado Libre'>
+        </div>
+        <div class="brand-card">
+            <a href="https://www.mercadolivre.com.br">
+                <h3>Mercado Livre</h3>
+            </a>
+            <img src='../../../static/i/mercado-livre.jpg' alt='Logo de la Mercado Livre Brasil'>
+        </div>
+        <div class="brand-card">
+            <a href="https://www.soyhenry.com/">
+               <h3>Soy Henry</h3>
+            </a>
+            <img src='../../../static/i/soy-henry.png' alt='Logo de la Mercado Livre Brasil'>
+        </div>
+        <!-- Agrega más tarjetas de marca según sea necesario -->
     </div>
 {% endblock %}
