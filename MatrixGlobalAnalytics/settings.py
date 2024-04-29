@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     "home",        # Aplicación "home" agregada
     "contacto",    # Aplicación "contacto" agregada
     "legal",       # Aplicación "legal" agregada
-    "trabajos",     # Aplicación "trabajos" agregada
+    "trabajos",    # Aplicación "trabajos" agregada
+    "faq",         # Aplicación "faq" agregada
 ]
 
 

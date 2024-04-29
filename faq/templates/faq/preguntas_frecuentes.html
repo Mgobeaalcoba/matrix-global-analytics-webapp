@@ -1,0 +1,143 @@
+{% extends 'partials/base.html' %}
+
+{% block title %}
+    <title>FAQ</title>
+{% endblock %}
+
+{% block styles %}
+    <style>
+        /* Estilos para la sección de preguntas frecuentes */
+        .faq-section {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .faq-section h2 {
+            color: #343a40;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .faq-section p {
+            color: #6c757d;
+            line-height: 1.5;
+            margin: 10px 0;
+        }
+
+        /* Estilos específicos para cada pregunta */
+        .faq-question,
+        .faq-answer {
+            border-bottom: 2px solid #dee2e6;
+            padding: 20px;
+        }
+
+        .faq-question ul {
+            list-style-type: none; /* Remueve los bullets de la lista */
+            padding: 0; /* Remueve el padding por defecto de la lista */
+            margin:0 40px;
+            align-content: center;
+        }
+
+        .faq-question ul li {
+            margin-bottom: 10px; /* Agrega un espacio entre cada elemento de la lista */
+            line-height: 1.5; /* Ajusta la altura de línea para mejorar la legibilidad */
+            margin-left: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .faq-question ul {
+                padding-left: 0; /* Agrega un padding a la izquierda para que la lista no quede pegada al borde */
+            }
+
+            .faq-question ul li {
+                margin-bottom: 5px; /* Reduce el espacio entre cada elemento de la lista */
+                margin-left: 0; /* Elimina el margen izquierdo para que la lista esté alineada a la izquierda */
+                padding-left: 4px;
+            }
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <!-- Contenido específico -->
+    <!-- Sección de preguntas frecuentes -->
+    <div class="faq-section">
+        <div class="faq-question color-main">
+            <h2>¿Qué servicios ofrece Matrix Global Analytics?</h2>
+            <ul>
+                <li>En Matrix Global Analytics ofrecemos una amplia gama de servicios de análisis de datos, incluyendo
+                    análisis predictivo, análisis de datos en tiempo real, minería de datos, inteligencia empresarial y
+                    más. Nuestro objetivo es ayudar a las empresas a tomar decisiones informadas basadas en datos.
+                </li>
+            </ul>
+        </div>
+        <div class="faq-question color-main">
+            <h2>¿Cómo puedo empezar a trabajar con Matrix Global Analytics?</h2>
+            <ul>
+                <li>¡Es fácil empezar a trabajar con nosotros! Simplemente ponte en contacto con nuestro equipo a través
+                    de nuestro formulario de contacto en línea o por correo electrónico. Estaremos encantados de
+                    discutir tus necesidades y cómo podemos ayudarte a alcanzar tus objetivos.
+                </li>
+            </ul>
+        </div>
+        <div class="faq-question color-main">
+            <h2>¿Qué tipo de empresas se benefician más de los servicios de Matrix Global Analytics?</h2>
+            <ul>
+                <li>Nuestros servicios son ideales para empresas de todos los tamaños y sectores que deseen aprovechar
+                    al máximo sus datos para tomar decisiones estratégicas. Desde startups hasta grandes corporaciones,
+                    nuestro equipo está capacitado para adaptarse a tus necesidades específicas.
+                </li>
+            </ul>
+        </div>
+        <div class="faq-question color-main">
+            <h2>¿Cuál es el proceso de trabajo de Matrix Global Analytics?</h2>
+            <ul>
+                <li>Nuestro proceso de trabajo comienza con una consulta inicial para entender tus objetivos y
+                    necesidades comerciales. Luego, desarrollamos un plan personalizado que incluye la recopilación,
+                    análisis y presentación de datos relevantes. Nos aseguramos de mantenerte informado en cada etapa
+                    del proceso.
+                </li>
+            </ul>
+        </div>
+        <div class="faq-question color-main">
+            <h2>¿Cómo garantiza Matrix Global Analytics la seguridad de mis datos?</h2>
+            <ul>
+                <li>En Matrix Global Analytics, tomamos la seguridad de los datos muy en serio. Utilizamos las últimas
+                    tecnologías y prácticas de seguridad para proteger la confidencialidad, integridad y disponibilidad
+                    de tus datos en todo momento.
+                </li>
+            </ul>
+        </div>
+        <div class="faq-question color-main">
+            <h2>¿Cuál es el tiempo de entrega de los proyectos de Matrix Global Analytics?</h2>
+            <ul>
+                <li>El tiempo de entrega de cada proyecto puede variar según su complejidad y requisitos específicos.
+                    Sin embargo, nos comprometemos a trabajar de manera eficiente para entregar resultados de alta
+                    calidad dentro de plazos razonables.
+                </li>
+            </ul>
+        </div>
+        <div class="faq-question color-main">
+            <h2>¿Ofrece Matrix Global Analytics soporte técnico después de la finalización del proyecto?</h2>
+            <ul>
+                <li>Sí, ofrecemos soporte técnico continuo después de la finalización del proyecto para garantizar que
+                    sigas obteniendo el máximo valor de nuestros servicios. Estamos disponibles para responder cualquier
+                    pregunta o resolver cualquier problema que puedas tener.
+                </li>
+            </ul>
+        </div>
+        <div class="faq-question color-main">
+            <h2>¿Cuál es la experiencia del equipo de Matrix Global Analytics?</h2>
+            <ul>
+                <li>Nuestro equipo está formado por profesionales altamente cualificados y con experiencia en diversas
+                    áreas del análisis de datos. Contamos con expertos en ciencia de datos, análisis estadístico,
+                    ingeniería de datos y más, listos para ayudarte a alcanzar tus objetivos comerciales.
+                </li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

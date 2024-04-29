@@ -20,6 +20,7 @@ from home import views as home_views
 from contacto import views as contacto_views
 from legal import views as legal_views
 from trabajos import views as trabajos_views
+from faq import views as faq_views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -31,4 +32,5 @@ urlpatterns = [
     path('nuestro-porfolio/', trabajos_views.nuestro_porfolio, name='nuestro_porfolio'),
     path('ultimos-proyectos/', trabajos_views.ultimos_proyectos, name='ultimos_proyectos'),
     path('marcas/', trabajos_views.marcas, name='marcas'),
+    path('preguntas-frecuentes/', faq_views.faq_view, name='preguntas_frecuentes'),
 ]
