@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>MGA Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- Static Files -->
+    {% load static %}
+    <link
+            rel="stylesheet"
+            type="text/css"
+            href="{% static 'css/styles.css' %}"
+    />
+    <script src="{% static 'js/script.js' %}"></script>
+    <link
+            rel="icon"
+            href="{% static 'i/logo-sin-fondo.png' %}"
+            type="image/x-icon"
+    />
+    <!-- Google Fonts -->
+    <link
+            href="https://fonts.googleapis.com/css?family=Nunito+Sans:100,200,300,400,600,500,700,800,900|Nunito:100,200,300,400,500,600,700,800,900&amp;subset=latin"
+            rel="stylesheet"
+    />
+    <!-- Bootstrap 4.3.1 CSS -->
+    <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+    />
+    <!-- Slick 1.8.1 jQuery plugin CSS (Sliders) -->
+    <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <!-- Fancybox 3 jQuery plugin CSS (Open images and video in popup) -->
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"
+    />
+    <!-- AOS 2.3.1 jQuery plugin CSS (Animations) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+    <!-- FontAwesome CSS -->
+    <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+            integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+            crossorigin="anonymous"
+    />
+    <!-- jQuery 3.3.1 -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <!-- Estaba al final pero lo llevo al head a ver como responde -->
+
+    <!-- Bootstrap 4.3.1 JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <!-- Fancybox 3 jQuery plugin JS (Open images and video in popup) -->
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <!-- Google maps JS API -->
+    <script
+            type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDP6Ex5S03nvKZJZSvGXsEAi3X_tFkua4U"
+    ></script>
+    <!-- Slick 1.8.1 jQuery plugin JS (Sliders) -->
+    <script
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+    <!-- AOS 2.3.1 jQuery plugin JS (Animations) -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Maskedinput jQuery plugin JS (Masks for input fields) -->
+    <script src="../../static/js/jquery.maskedinput.min.js"></script>
+    <!-- Startup 3 JS (Custom js for all blocks) -->
+    <script src="../../static/js/script.js"></script>
+</head>
+
+<body>
+<!-- Navigation Mobile type 2 -->
+<a class="open_menu color-main bg-light radius_full"
+><i class="fas fa-bars lh-40"></i
+></a>
+<div class="navigation_mobile bg-light type2">
+    <a class="close_menu color-main"><i class="fas fa-times"></i></a>
+    <div class="px-40 pt-60 pb-60 text-center inner">
+        <div>
+            <a href="/" class="f-heading f-22 link color-main mb-20">Home</a>
+        </div>
+
+        <div>
+            <a href="#" class="f-heading f-22 link color-main mb-20">Precios</a>
+        </div>
+
+        <div>
+            <a href="/quienes-somos/" class="f-heading f-22 link color-main mb-20"
+            >¿Quiénes somos?</a
+            >
+        </div>
+
+        <div>
+            <a href="#" class="f-heading f-22 link color-main mb-20"
+            >Preguntas Frecuentes</a
+            >
+        </div>
+
+        <div>
+            <a
+                    href="{% url 'formulario_contacto' %}"
+                    class="f-heading f-22 link color-main mb-20"
+            >Contactanos</a
+            >
+        </div>
+        <div>
+            <a
+                    href="mailto:gobeamariano@gmail.com?subject=Estoy%20interesado/a%20en%20tus%20servicios%20profesionales"
+                    class="f-12 link color-main op-7 text-uppercase sp-20 mb-20"
+            >Email</a
+            >
+        </div>
+        <div>
+            <a
+                    href="https://datageekguru.blogspot.com/"
+                    class="f-12 link color-main op-7 text-uppercase sp-20 mb-20"
+            >Blog</a
+            >
+        </div>
+        <div>
+            <a
+                    href="#"
+                    class="f-12 link color-main op-7 text-uppercase sp-20 mb-20"
+            >Trabaja con Nosotros</a
+            >
+        </div>
+        <div class="socials mt-60">
+            <a href="#" target="_blank" class="link color-main f-18 mx-10"
+            ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="#" target="_blank" class="link color-main f-18 mx-10"
+            ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+                    href="https://www.linkedin.com/in/mariano-gobea-alcoba/"
+                    target="_blank"
+                    class="link color-main f-18 mx-10"
+            ><i class="fab fa-linkedin"></i
+            ></a>
+            <a
+                    href="mailto:gobeamariano@gmail.com?subject=Estoy%20interesado/a%20en%20tus%20servicios%20profesionales"
+                    target="_blank"
+                    class="link color-main f-18 mx-10"
+            ><i class="fa fa-envelope"></i
+            ></a>
+        </div>
+    </div>
+</div>
+
+<!-- Header 16 -->
+<style>
+    .header_16 {
+        background-image: url(../../static/i/header_16_bg.jpg);
+    }
+
+    @media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+        .header_16 {
+            background-image: url(../../static/i/header_16_bg.jpg);
+        }
+    }
+</style>
+
+<header class="pt-145 pb-115 header_16">
+    <!-- Header Menu 16 -->
+    <nav class="header_menu_16 pt-30 pb-30 mt-15">
+        <div class="container px-xl-0">
+            <div class="row justify-content-center">
+                <div
+                        class="col-xl-10"
+                        data-aos-duration="600"
+                        data-aos="fade-down"
+                        data-aos-delay="1200"
+                >
+                    <div class="row align-items-baseline">
+                        <div class="col-lg-18 d-flex align-items-center f-18 medium">
+                            <a href="/" class="mx-15 link color-white"
+                            ><img
+                                    src="{% static 'i/logo-sin-fondo.png' %}"
+                                    alt="Logo"
+                                    class="mx-15 logo-image"
+                                    width="50"
+                                    height="50"
+                            /></a>
+                            <div class="mx-15 logo color-white">
+                                <a href="/" class="mx-15 link color-white"
+                                >Matrix Global Analytics</a
+                                >
+                            </div>
+                            <a href="#" class="mx-15 link color-white">Precios</a>
+                            <a href="/quienes-somos/" class="mx-15 link color-white">¿Quiénes somos?</a>
+                            <a href="#" class="mx-15 link color-white"
+                            >Preguntas Frecuentes</a
+                            >
+                            <a
+                                    href="{% url 'formulario_contacto' %}"
+                                    class="mx-15 link color-white"
+                            >Contáctenos</a
+                            >
+                            <a href="#" class="mx-30 btn sm action-3">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container px-xl-0 color-white">
+        <div class="row justify-content-center">
+            <div class="col-xl-10">
+                <div
+                        class="row flex-column-reverse flex-md-row align-items-stretch text-center text-md-left"
+                >
+                    <div class="col-lg-7 col-md-9 pt-40">
+                        <img
+                                src="{% static 'i/logo-sin-fondo.png' %}"
+                                alt="Logo"
+                                class="mb-15 logo-image"
+                                width="150"
+                                height="150"
+                        />
+                        <div
+                                class="mb-3 logo d-block d-xl-none color-white logo_mobile"
+                        >
+                            Matrix Global Analytics
+                        </div>
+                        <h1
+                                class="mb-20 big"
+                                data-aos-duration="600"
+                                data-aos="fade-down"
+                                data-aos-delay="0"
+                        >
+                            Transforma Tu Negocio Ahora
+                        </h1>
+                        <div
+                                class="f-22 text-adaptive"
+                                data-aos-duration="600"
+                                data-aos="fade-down"
+                                data-aos-delay="300"
+                        >
+                            Haz volar tu negocio desbloqueando el Potencial de tus Datos.
+                            Soluciones Analíticas Personalizadas para Impulsar tu Éxito
+                            Empresarial. ¡Descubre el Poder de Matrix Global Analytics
+                            Hoy!
+                        </div>
+                        <div class="mt-80 row blocks">
+                            <div
+                                    class="mt-30 col-sm-6"
+                                    data-aos-duration="600"
+                                    data-aos="fade-down"
+                                    data-aos-delay="600"
+                            >
+                                <i class="f-50 fas fa-cogs"></i>
+                                <div class="mt-30 mb-25 semibold f-20 title">
+                                    Propuestas Versátiles
+                                </div>
+                                <div class="text-adaptive">
+                                    El diseño de nuestra propuesta de valor está fundamentado
+                                    en la robustez y versatilidad de las herramientas
+                                    analíticas de datos, ofreciendo un valor excepcional para
+                                    potenciar tu negocio hacia el éxito.
+                                </div>
+                            </div>
+                            <div
+                                    class="mt-30 col-sm-6"
+                                    data-aos-duration="600"
+                                    data-aos="fade-down"
+                                    data-aos-delay="900"
+                            >
+                                <i class="f-50 fas fa-business-time"></i>
+                                <div class="mt-30 mb-25 semibold f-20 title">
+                                    Insights &amp; Growth
+                                </div>
+                                <div class="text-adaptive">
+                                    Los insights impulsan el crecimiento empresarial al
+                                    revelar oportunidades, optimizar estrategias y mejorar la
+                                    toma de decisiones fundamentadas.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                            class="col-lg-5 col-md-3 d-flex align-items-center"
+                            data-aos-duration="600"
+                            data-aos="fade-down"
+                            data-aos-delay="1200"
+                    >
+                        <img
+                                srcset="../../static/i/mac_analytics-removebg-preview.png"
+                                src="../../static/i/mac_analytics-removebg-preview.png"
+                                class="ml-30 mh-full img"
+                                alt=""
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Terminado -->
+<!-- Feature 37 -->
+
+<section class="feature_37 bg-light pt-100 pb-65">
+    <div class="container px-xl-0">
+        <div class="row justify-content-between">
+            <div class="col-xl-1"></div>
+            <div
+                    class="col-lg-5 col-md-6 mb-50 mb-md-0"
+                    data-aos-duration="600"
+                    data-aos="fade-down"
+                    data-aos-delay="0"
+            >
+                <h2 class="mb-20 small">Análisis Exploratorio de Datos</h2>
+                <div class="mb-25 f-18 medium color-heading op-7 text-adaptive">
+                    Descubre el potencial oculto en tus datos y toma decisiones
+                    estratégicas informadas para impulsar tu empresa.
+                </div>
+                <a href="#" class="btn sm action-1 f-16">Explorar</a>
+            </div>
+            <div class="col-md-1"></div>
+            <div
+                    class="col-md-5"
+                    data-aos-duration="600"
+                    data-aos="fade-down"
+                    data-aos-delay="300"
+            >
+                <div class="mb-55 d-flex align-items-center advantage">
+                    <i class="fas fa-sync-alt color-gray f-26 lh-24 w-30 mr-20"></i>
+                    <div class="f-14 semibold text-uppercase sp-20 title">
+                        Descubrimiento de Patrones
+                    </div>
+                </div>
+                <div class="mb-55 d-flex align-items-center advantage">
+                    <i class="far fa-file color-gray f-26 lh-24 w-30 mr-20"></i>
+                    <div class="f-14 semibold text-uppercase sp-20 title">
+                        Optimización de Estrategias
+                    </div>
+                </div>
+                <div class="mb-55 d-flex align-items-center advantage">
+                    <i class="far fa-clone color-gray f-26 lh-24 w-30 mr-20"></i>
+                    <div class="f-14 semibold text-uppercase sp-20 title">
+                        Identificación de Tendencias
+                    </div>
+                </div>
+                <div class="mb-55 d-flex align-items-center advantage">
+                    <i class="fas fa-desktop color-gray f-26 lh-24 w-30 mr-20"></i>
+                    <div class="f-14 semibold text-uppercase sp-20 title">
+                        Toma de Decisiones Fundamentadas
+                    </div>
+                </div>
+                <div class="mb-55 d-flex align-items-center advantage">
+                    <i class="fas fa-columns color-gray f-26 lh-24 w-30 mr-20"></i>
+                    <div class="f-14 semibold text-uppercase sp-20 title">
+                        Generación de Insights Accionables
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Vamos ahora por Content 6 -->
+<!-- Content 6 -->
+<style>
+    .content_6 {
+        background-image: url(../../static/i/analytics-fondo-2.jpg);
+        opacity: 1;
+    }
+
+    @media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+        .content_6 {
+            background-image: url(../../static/i/analytics-fondo-2.jpg);
+            opacity: 1;
+        }
+    }
+</style>
+
+<section class="content_6 pt-125 pb-105">
+    <div class="container px-xl-0 text-center color-white">
+        <div class="row justify-content-center">
+            <div
+                    class="col-lg-8 col-md-10 color-gray"
+                    data-aos-duration="600"
+                    data-aos="fade-down"
+                    data-aos-delay="0"
+            >
+                <h2>Transforma tu Negocio con el Poder de los Datos</h2>
+            </div>
+            <div
+                    class="mt-35 col-xl-7 col-lg-8 col-md-10 f-22 text-adaptive color-gray"
+                    data-aos-duration="600"
+                    data-aos="fade-down"
+                    data-aos-delay="300"
+            >
+                Descubre cómo el análisis profesional de datos puede impulsar el
+                éxito y el crecimiento de tu empresa.
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Ecommerce 30 -->
+
+<style>
+    #ecommerce_30_block_1 .bg {
+        background-image: url(../../static/i/big-data-2.jpg);
+    }
+
+    @media (-webkit-min-device-pixel-ratio: 0.25), (min-resolution: 100dpi) {
+        #ecommerce_30_block_1 .bg {
+            background-image: url(../../static/i/big-data-2.jpg);
+        }
+    }
+
+    #ecommerce_30_block_2 .bg {
+        background-image: url(../../static/i/ecommerce_30_bg_2.jpg);
+    }
+
+    @media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+        #ecommerce_30_block_2 .bg {
+            background-image: url(../../static/i/ecommerce_30_bg_2@2x.jpg);
+        }
+    }
+</style>
+
+<section class="ecommerce_30 bg-light pt-85 pb-85 text-center text-md-left">
+    <div class="container px-xl-0">
+        <div class="row">
+            <div
+                    class="mt-15 mb-15 col-xl-8 col-md-6 d-md-flex align-items-stretch product big"
+                    id="ecommerce_30_block_1"
+                    data-aos-duration="600"
+                    data-aos="fade-down"
+                    data-aos-delay="0"
+            >
+                <div class="relative holder radius10">
+                    <div class="absolute bg"></div>
+                    <div
+                            class="px-50 pt-50 pb-60 relative d-md-flex flex-column justify-content-between align-items-start h-full inner"
+                    >
+                        <div class="top">
+                            <div
+                                    class="mb-2 f-14 color-heading semibold text-uppercase sp-20 subtitle"
+                            >
+                                Cursos Presenciales, Online y On Demand
+                            </div>
+                            <h2 class="mb-60 small">
+                                Aprende Herramientas de Data Profesionales
+                            </h2>
+                        </div>
+                        <a href="#" class="btn action-2">Explora los Cursos</a>
+                    </div>
+                </div>
+            </div>
+            <div
+                    class="mt-15 mb-15 col-xl-4 col-md-6 d-md-flex align-items-stretch product small"
+                    id="ecommerce_30_block_2"
+                    data-aos-duration="600"
+                    data-aos="fade-down"
+                    data-aos-delay="300"
+            >
+                <div class="relative holder radius10">
+                    <div class="absolute bg"></div>
+                    <div
+                            class="px-50 pt-50 pb-60 relative d-md-flex flex-column justify-content-between align-items-start h-full inner"
+                    >
+                        <div class="top">
+                            <div
+                                    class="mb-2 f-14 color-white semibold text-uppercase sp-20 subtitle"
+                            >
+                                Descuento Especial
+                            </div>
+                            <h2 class="mb-60 small color-white">
+                                ¡Inscríbete Ahora y Obtené un 50% de Descuento!
+                            </h2>
+                        </div>
+                        <a href="#" class="btn action-white"
+                        ><span class="color-main">Explora los Cursos</span></a
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pricing Table 4 -->
+<section class="pricing_table_4 pt-105 pb-100 color-white">
+    <div class="container px-xl-0">
+        <div class="row justify-content-center text-center">
+            <div
+                    class="col-xl-8 col-lg-10"
+                    data-aos-duration="600"
+                    data-aos="fade-down"
+                    data-aos-delay="0"
+            >
+                <h2 class="small">Planes y Precios</h2>
+            </div>
+            <div
+                    class="col-xl-6 col-lg-8 col-md-10"
+                    data-aos-duration="600"
+                    data-aos="fade-down"
+                    data-aos-delay="300"
+            >
+                <div class="mt-25 mb-55 f-22 text-adaptive">
+                    Matrix Global Analytics ofrece soluciones adaptadas a tus
+                    necesidades específicas.
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="mb-70 mb-lg-0 col-lg-4 col-md-7 col-sm-8">
+                <div class="mx-auto mw-370 px-70 pt-60 pb-55 radius10 block">
+                    <div
+                            class="f-22 title"
+                            data-aos-duration="600"
+                            data-aos="fade-down"
+                            data-aos-delay="0"
+                    >
+                        Análisis Específico
+                    </div>
+                    <div
+                            class="mt-30 mb-40 f-58 d-flex align-items-start price"
+                            data-aos-duration="600"
+                            data-aos="fade-down"
+                            data-aos-delay="0"
+                    >
+                        <b>500</b>
+                        <div class="mt-1 ml-5 f-16">$</div>
+                    </div>
+                    <ul
+                            class="px-0"
+                            data-aos-duration="600"
+                            data-aos="fade-down"
+                            data-aos-delay="0"
+                    >
+                        <li class="mb-10">Resolución de problemas puntuales</li>
+                        <li class="mb-10">Insights personalizados</li>
+                        <li class="mb-10">Asesoramiento experto</li>
+                    </ul>
+                    <div
+                            data-aos-duration="600"
+                            data-aos="fade-down"
+                            data-aos-delay="0"
+                    >
+                        <a href="#" class="mt-15 btn lg action-3">Contratar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-70 mb-lg-0 col-lg-4 col-md-7 col-sm-8">
+                <div class="mx-auto mw-370 px-70 pt-60 pb-55 radius10 block">
+                    <div
+                            class="f-22 title"
+                            data-aos-duration="600"
+                            data-aos="fade-down"
+                            data-aos-delay="150"
+                    >
+                        Entrenamiento
+                    </div>
+                    <div
+                            class="mt-30 mb-40 f-58 d-flex align-items-start price"
+                            data-aos-duration="600"
+                            data-aos="fade-down"
+                            data-aos-delay="150"
+                    >
+                        <b>1000</b>
+                        <div class="mt-1 ml-5 f-16">$</div>
+                    </div>
+                    <ul
+                            class="px-0"
+                            data-aos-duration="600"
+                            data-aos="fade-down"
+                            data-aos-delay="150"
+                    >
+                        <li class="mb-10">Capacitación en herramientas de data</li>
+                        <li class="mb-10">Desarrollo de habilidades de análisis</li>
+                        <li class="mb-10">Optimización del uso de tecnologías</li>
+                    </ul>
+                    <div
+                            data-aos-duration="600"
+                            data-aos="fade-down"
+                            data-aos-delay="150"
+                    >
+                        <a href="#" class="mt-15 btn lg action-3">Contratar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-7 col-sm-8">
+                <div class="mx-auto mw-370 px-70 pt-60 pb-55 radius10 block">
+                    <div
+                            class="f-22 title"
+                            data-aos-duration="600"
+                            data-aos="fade-down"
+                            data-aos-delay="300"
+                    >
+                        Socio Tecnológico
+                    </div>
+                    <div
+                            class="mt-30 mb-40 f-58 d-flex align-items-start price"
+                            data-aos-duration="600"
+                            data-aos="fade-down"
+                            data-aos-delay="300"
+                    >
+                        <b>2000</b>
+                        <div class="mt-1 ml-5 f-16">$</div>
+                    </div>
+                    <ul
+                            class="px-0"
+                            data-aos-duration="600"
+                            data-aos="fade-down"
+                            data-aos-delay="300"
+                    >
+                        <li class="mb-10">Gestión integral de tecnología de datos</li>
+                        <li class="mb-10">Capacitación continua y escalable</li>
+                        <li class="mb-10">Desarrollo de cultura data-driven</li>
+                    </ul>
+                    <div
+                            data-aos-duration="600"
+                            data-aos="fade-down"
+                            data-aos-delay="300"
+                    >
+                        <a href="#" class="mt-15 btn lg action-3">Contratar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer 3 -->
+<footer class="footer_3 bg-light pt-100 pb-100 text-center text-lg-left">
+    <div class="container px-xl-0">
+        <div class="row">
+            <div class="col-xl-1"></div>
+            <div
+                    class="mb-50 mb-lg-0 col-lg-4"
+                    data-aos-duration="600"
+                    data-aos="fade-down"
+                    data-aos-delay="0"
+            >
+                <div class="row">
+                    <div class="col-12">
+                        <a href="/" class="mx-15 link color-white"
+                        ><img
+                                src="{% static 'i/logo-sin-fondo.png' %}"
+                                alt="Logo"
+                                class="mx-15 logo-image"
+                                width="50"
+                                height="50"
+                        /></a>
+                        <a href="/" class="logo link color-main"
+                        >Matrix Global Analytics</a
+                        >
+                    </div>
+                    <div
+                            class="mt-30 mb-35 col-xl-7 col-lg-9 color-heading text-adaptive description"
+                    >
+                        Asegúrate de revisar nuestros
+                        <a href="{% url 'terminos_de_uso' %}" class="link color-heading"
+                        >Términos de Uso</a
+                        >
+                        y
+                        <a
+                                href="{% url 'politica_de_privacidad' %}"
+                                class="link color-heading"
+                        >Política de Privacidad</a
+                        >
+                    </div>
+                    <div class="col-12 socials">
+                        <a href="#" class="f-18 link color-main mr-30"
+                        ><i class="fab fa-twitter"></i
+                        ></a>
+                        <a href="#" class="f-18 link color-main mr-30"
+                        ><i class="fab fa-instagram"></i
+                        ></a>
+                        <a
+                                href="https://www.linkedin.com/in/mariano-gobea-alcoba/"
+                                class="f-18 link color-main mr-30"
+                        ><i class="fab fa-linkedin"></i
+                        ></a>
+                        <a
+                                href="mailto:gobeamariano@gmail.com?subject=Estoy%20interesado/a%20en%20tus%20servicios%20profesionales"
+                                class="f-18 link color-main"
+                        ><i class="fa fa-envelope"></i
+                        ></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-7 col-lg-8">
+                <div class="row no-gutters">
+                    <div
+                            class="col-md-3 col-6 mb-50 mb-md-0"
+                            data-aos-duration="600"
+                            data-aos="fade-down"
+                            data-aos-delay="150"
+                    >
+                        <div class="mb-35 f-18 semibold title">Producto</div>
+                        <div class="mb-10">
+                            <a href="#" class="link color-main">Características</a>
+                        </div>
+                        <div class="mb-10">
+                            <a href="#" class="link color-main">Precios</a>
+                        </div>
+                        <div class="mb-10">
+                            <a href="#" class="link color-main">Tour</a>
+                        </div>
+                    </div>
+                    <div
+                            class="col-md-3 col-6 mb-50 mb-md-0"
+                            data-aos-duration="600"
+                            data-aos="fade-down"
+                            data-aos-delay="300"
+                    >
+                        <div class="mb-35 f-18 semibold title">Trabajo</div>
+                        <div class="mb-10">
+                            <a href="/nuestro-porfolio/" class="link color-main">Nuestro Portafolio</a>
+                        </div>
+                        <div class="mb-10">
+                            <a href="/ultimos-proyectos/" class="link color-main">Últimos Proyectos</a>
+                        </div>
+                        <div class="mb-10">
+                            <a href="/marcas/" class="link color-main">Marcas</a>
+                        </div>
+                    </div>
+                    <div
+                            class="col-md-3 col-6"
+                            data-aos-duration="600"
+                            data-aos="fade-down"
+                            data-aos-delay="450"
+                    >
+                        <div class="mb-35 f-18 semibold title">Información</div>
+                        <div class="mb-10">
+                            <a
+                                    href="{% url 'politica_de_privacidad' %}"
+                                    class="link color-main"
+                            >Privacidad</a
+                            >
+                        </div>
+                        <div class="mb-10">
+                            <a href="{% url 'terminos_de_uso' %}" class="link color-main"
+                            >Soporte</a
+                            >
+                        </div>
+                        <div class="mb-10">
+                            <a href="#" class="link color-main">Centro de Ayuda</a>
+                        </div>
+                        <div class="mb-10">
+                            <a href="#" class="link color-main">FAQ</a>
+                        </div>
+                    </div>
+                    <div
+                            class="col-md-3 col-6"
+                            data-aos-duration="600"
+                            data-aos="fade-down"
+                            data-aos-delay="600"
+                    >
+                        <div class="mb-35 f-18 semibold title">Acerca de</div>
+                        <div class="mb-10">
+                            <a href="#" class="link color-main">Sobre Nosotros</a>
+                        </div>
+                        <div class="mb-10">
+                            <a
+                                    href="https://datageekguru.blogspot.com/"
+                                    class="link color-main"
+                            >Blog</a
+                            >
+                        </div>
+                        <div class="mb-10">
+                            <a href="#" class="link color-main">Equipo</a>
+                        </div>
+                        <div class="mb-10">
+                            <a href="#" class="link color-main">Carrera</a>
+                        </div>
+                        <div class="mb-10">
+                            <a
+                                    href="{% url 'formulario_contacto' %}"
+                                    class="link color-main"
+                            >Contacto</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
