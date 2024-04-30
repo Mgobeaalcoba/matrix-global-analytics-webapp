@@ -20,6 +20,14 @@ class NewProject(models.Model):
 
     def __str__(self):
         return self.title
+
+class Cliente(models.Model):
+    nombre = models.CharField(max_length=100)
+    sitio_web = models.URLField()
+    logo = models.ImageField(upload_to='../static/i')
+
+    def __str__(self):
+        return self.nombre
     
 class Employee(models.Model):
     name = models.CharField(max_length=200)
