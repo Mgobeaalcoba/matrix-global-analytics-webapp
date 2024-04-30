@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "legal",       # Aplicación "legal" agregada
     "trabajos",    # Aplicación "trabajos" agregada
     "faq",         # Aplicación "faq" agregada
+    "precios",     # Aplicación "precios" agregada
 ]
 
 
