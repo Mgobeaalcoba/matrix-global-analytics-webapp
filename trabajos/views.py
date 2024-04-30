@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import PorfolioItem, Employee, Experience
+from .models import PorfolioItem, Employee, Experience, NewProject
 
 def quienes_somos(request):
     empleados = Employee.objects.all()
@@ -19,7 +19,11 @@ def nuestro_porfolio(request):
     return render(request, 'trabajos/nuestro_porfolio.html', context)
 
 def ultimos_proyectos(request):
-    return render(request, 'trabajos/ultimos_proyectos.html')
+    new_projects = NewProject.objects.all()
+    context = {
+        'new_projects': new_projects
+    }
+    return render(request, 'trabajos/ultimos_proyectos.html', context)
 
 def marcas(request):
     return render(request, 'trabajos/marcas.html')

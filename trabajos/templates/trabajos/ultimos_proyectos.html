@@ -70,16 +70,16 @@
 {% block content %}
     <!-- Contenido específico -->
     <div class="portfolio-section">
-        <h2>Últimos Proyectos realizados desde MGA</h2>
-        <div class="portfolio-card">
-            <h3>Data Lanes Python 2024</h3>
-            <p>Capacitación de 7 semanas dictada a para Mercado Libre donde partimos de optimización de consultas SQL, y
-                aprendemos Python para análisis de datos pasando por conceptos elementales y muy útiles de
-                Estadística</p>
-            <img src="../../../static/i/data-lanes.jpeg" alt="Vista previa del arranque del Data Lanes">
-            <a href="https://github.com/Mgobeaalcoba/padawan_python_course" target="_blank">
-                <img src="../../../static/i/github_logo.png" alt='GitHub Logo'>
-            </a>
-        </div>
+        <h2>Últimos proyectos realizados</h2>
+        {% for item in new_projects %}
+            <div class="portfolio-card">
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.description }}</p>
+                <img src="{{ item.image }}" alt="Vista previa del {{ item.title }}">
+                <a href="{{ item.github_link }}" target="_blank">
+                    <img src="{{ item.github_link_img }}" alt="Github Logo">
+                </a>
+            </div>
+        {% endfor %}
     </div>
 {% endblock %}
