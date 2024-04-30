@@ -107,264 +107,40 @@
 
 {% block content %}
     <!-- Contenido específico -->
-    <!-- Sección CEO -->
-    <div class="ceo-section">
-        <!-- Div para la foto, título y nombre -->
-        <div class="ceo-info">
-            <img src="../../../static/i/ceo-photo.jpg" alt="Foto del CEO">
-            <h2>Mariano Gobea Alcoba</h2>
-            <h3>CEO en Matrix Global Analytics</h3>
+    <!-- Sección CEO usando Django -->
+    {% for empleado in empleados %}
+        <div class="ceo-section">
+            <div class="ceo-info">
+                <img src="{{ empleado.photo }}" alt="Foto del Empleado">
+                <h2>{{ empleado.name }}</h2>
+                <h3>{{ empleado.title }}</h3>
+            </div>
+            <div class="ceo-description">
+                <h3>Descripción</h3>
+                <ul>
+                    {% for paragraph in empleado.description %}
+                        <li>{{ paragraph }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="ceo-experience">
+                <h3>Experiencia y formación</h3>
+                <ul>
+                    {% for experience in empleado.experiences.all %}
+                        <li>
+                            <strong>{{ experience.company }}</strong> - {{ experience.years }}<br>
+                            <em>{{ experience.position }}</em> - {{ experience.duration }}
+                            - {{ experience.location }}<br>
+                            {{ experience.description }}
+                        </li>
+                        <br>
+                    {% endfor %}
+                    <li>
+                        <strong>Mas detalles en <a href="https://www.linkedin.com/in/mariano-gobea-alcoba/"
+                                                   class="f-heading f-22 link color-facebook mb-20">LinkedIn</a></strong>
+                    </li>
+                </ul>
+            </div>
         </div>
-
-        <!-- Descripción -->
-        <div class="ceo-description">
-            <h3>Descripción</h3>
-            <ul>
-                <li>🎩💼 Hola, soy Mariano Gobea Alcoba, un profesional apasionado de la tecnología y los negocios, con
-                    base en Buenos Aires, Argentina. Con una sólida experiencia en la industría tecnológica y un enfoque
-                    en el desarrollo de soluciones innovadoras para problemas logísticos, me destaco por mi capacidad
-                    para impulsar resultados impactantes.
-                </li>
-                <li>🌍🔍 Mi trayectoria abarca diversos roles, desde Business Intelligence Specialist hasta Product Owner.
-                    A lo largo de mi carrera, he adquirido una amplia gama de habilidades en el análisis, explotación y
-                    almacenamiento de datos, permitiéndome abordar desafíos con una perspectiva integral fuertemente
-                    basada en datos y adaptarme rápidamente a entornos dinámicos.
-                </li>
-                <li>💡✨ Me considero un pensador estratégico y creativo, siempre buscando oportunidades para mejorar
-                    productos y procesos, optimizar resultados y potenciar el crecimiento empresarial. Además, poseo una
-                    fuerte capacidad analítica y resolutiva, lo que me permite tomar decisiones fundamentadas y liderar
-                    proyectos de manera eficiente.
-                </li>
-                <li>🚀🌟 Durante mi tiempo en Mercado Libre, he desempeñado un papel importante en el desarrollo e
-                    implementación de distinas features que han afectado positivamente la experiencia de los conductores
-                    de Mercado Envíos así los principales KPI´s del negocio. Esto me ha permitido fortalecer mi
-                    capacidad para trabajar y gestionar equipos multifuncionales y multidisciplinares colaborando
-                    estrechamente con mis stakeholders para lograr resultados excepcionales.
-                </li>
-                <li>🌱📚 Siempre estoy en búsqueda de oportunidades de aprendizaje y crecimiento, tanto dentro como fuera
-                    del ámbito laboral. Me encanta mantenerme actualizado sobre las últimas tendencias y avances en
-                    industria tecnológica y la logística, y participo regularmente de conferencias, cursos y eventos
-                    relevantes para ampliar mi know-how, mi red de contactos y enriquecer así mi perfil profesional.
-                </li>
-                <li>📧🤝 Estoy abierto a nuevas conexiones y oportunidades profesionales, así que no dudes en contactarme
-                    si deseas colaborar en proyectos innovadores o si consideras que podemos aportar mutuamente a
-                    nuestras trayectorias. ¡Será un placer conectar contigo y explorar sinergias!
-                </li>
-            </ul>
-        </div>
-
-        <div class="ceo-experience">
-            <!-- Experiencia -->
-            <h3>Experiencia</h3>
-            <ul>
-                <li>
-                    <strong>Mercado Libre</strong> - 5 años
-                    <br>
-                    <em>Sr Data & Analytics Engineer</em> - diciembre de 2023 - Presente (5 meses) Buenos Aires,
-                    Argentina
-                    <br>
-                    Team: User Accounts - Auth Login
-                    <ul>
-                        <li>Data & Analytics Tasks:</li>
-                        <ul>
-                            <li>Construcción del modelo de datos Login MP ML ME y otras aplicaciones además de poner el
-                                modelo a disposición de la empresa.
-                            </li>
-                            <li>Construcción de cuadros de mando para seguir las principales métricas del negocio:
-                                conversión de inicio de sesión, conversión de recuperación, conversión de los diferentes
-                                factores de autenticación e identificación.
-                            </li>
-                            <li>Generación de scripts que actualizan el modelo de datos diariamente y a bajo costo
-                                operativo.
-                            </li>
-                            <li>Generación de cuadros de mando, presentaciones y/o tablas de datos que permitan al
-                                negocio,
-                                al producto y al propio equipo comprender el impacto de cada funcionalidad puesta en el
-                                mercado.
-                            </li>
-                            <li>Coordinación con Producto para entender el horizonte del producto y cómo debemos mostrar
-                                nuestros resultados.
-                            </li>
-                        </ul>
-                        <li>Backend Tasks:</li>
-                        <ul>
-                            <li>Construcción de Rest API desde cero para forensiar casos de transacciones de inicio de
-                                sesión exitosas y fallidas y poder automatizar decisiones en departamentos como CX,
-                                Prevención de Fraude o GIN.
-                            </li>
-                            <li>Migración del modelo de datos interno para factores de autenticación de Amazon Athena a
-                                Google Big Query.
-                            </li>
-                            <li>Desarrollo de nuevas funcionalidades para un producto Core del ecosistema como es
-                                Auth-Login.
-                            </li>
-                        </ul>
-                    </ul>
-                </li>
-                <br>
-                <li>
-                    <strong>Mercado Libre</strong> - 5 años
-                    <br>
-                    <em>Shipping Product Owner</em> - junio de 2022 - diciembre de 2023 (1 años y 7 meses) Buenos Aires,
-                    Argentina
-                    <br>
-                    Team: Search Quality - Ranking
-                    <ul>
-                        <li>Identificar oportunidades de mejora en el producto o nuevas funcionalidades.</li>
-                        <li>Definir la estrategia y roadmap del producto en conjunto con el equipo de desarrollo y otras
-                            áreas de la empresa.
-                        </li>
-                        <li>Analizar el mercado y la competencia para tomar decisiones informadas sobre el producto.
-                        </li>
-                        <li>Asegurarse de que el producto cumpla con los requerimientos de calidad y experiencia de
-                            usuario.
-                        </li>
-                        <li>Gestionar el backlog de funcionalidades y priorizarlas según la estrategia del producto.
-                        </li>
-                        <li>Asegurarse de que el equipo de desarrollo tenga claros los objetivos y prioridades del
-                            producto.
-                        </li>
-                        <li>Realizar seguimiento y análisis de métricas de negocio y de uso del producto.</li>
-                        <li>Comunicar los avances y decisiones del producto a otras áreas de la empresa.</li>
-                        <li>Participar en la definición de precios y estrategias de monetización del producto.</li>
-                        <li>Estar al tanto de las tendencias y novedades del mercado para anticipar oportunidades y
-                            desafíos
-                            en el futuro.
-                        </li>
-                    </ul>
-                </li>
-                <br>
-                <li>
-                    <strong>Mas detalles en <a href="https://www.linkedin.com/in/mariano-gobea-alcoba/"
-                                               class="f-heading f-22 link color-facebook mb-20">LinkedIn</a></strong>
-                </li>
-            </ul>
-        </div>
-
-        <!-- Educación -->
-        <div class="ceo-education">
-            <h3>Educación</h3>
-            <ul>
-                <li>
-                    <strong>Platzi</strong> - Python Backend Engineer, Ciencias de la computación
-                    <br>
-                    <em>junio de 2022 - junio de 2023</em> (1 año)
-                    <br>
-                    Durante este periodo, adquirí conocimientos y habilidades en el campo de la ciencia de la
-                    computación y la ingeniería de backend, centrándome en el lenguaje de programación Python. A
-                    continuación, se detallan algunas de las áreas cubiertas:
-                    <ul>
-                        <li>Desarrollo de aplicaciones backend utilizando Python y sus frameworks asociados.</li>
-                        <li>Implementación de bases de datos y sistemas de almacenamiento de datos.</li>
-                        <li>Optimización de rendimiento y escalabilidad en entornos de desarrollo backend.</li>
-                        <li>Diseño y desarrollo de API RESTful para interactuar con aplicaciones frontend y otros
-                            servicios.
-                        </li>
-                        <li>Despliegue y gestión de aplicaciones en entornos de producción utilizando herramientas como
-                            Docker y AWS.
-                        </li>
-                        <li>Pruebas automatizadas y metodologías de desarrollo ágil aplicadas al desarrollo de
-                            software.
-                        </li>
-                        <li>Integración de servicios externos y herramientas de terceros en aplicaciones backend.</li>
-                        <li>Resolución de problemas complejos y trabajo en equipo en proyectos de desarrollo de
-                            software.
-                        </li>
-                        <li>Actualización continua y aprendizaje de nuevas tecnologías y prácticas en el campo de la
-                            ingeniería de software.
-                        </li>
-                    </ul>
-                </li>
-                <br>
-                <li>
-                    <strong>Platzi</strong> - Data Analyst, Ciencias de la computación
-                    <br>
-                    <em>julio de 2021 - junio de 2022</em> (11 meses)
-                    <br>
-                    Durante este periodo, me enfoqué en adquirir habilidades y conocimientos en el campo del análisis de
-                    datos y la ciencia de la computación. A continuación, se detallan algunas áreas cubiertas durante
-                    este programa:
-                    <ul>
-                        <li>Adquisición y limpieza de datos de diversas fuentes para su posterior análisis.</li>
-                        <li>Exploración y visualización de datos utilizando herramientas como Python y bibliotecas como
-                            Pandas, Matplotlib y Seaborn.
-                        </li>
-                        <li>Aplicación de técnicas de análisis estadístico para comprender los datos y extraer insights
-                            significativos.
-                        </li>
-                        <li>Desarrollo y evaluación de modelos predictivos y de machine learning para resolver problemas
-                            de negocio.
-                        </li>
-                        <li>Implementación de técnicas de minería de datos para descubrir patrones y tendencias en
-                            conjuntos de datos grandes.
-                        </li>
-                        <li>Comunicación efectiva de resultados y hallazgos a partes interesadas utilizando
-                            visualizaciones y presentaciones claras y concisas.
-                        </li>
-                        <li>Uso de herramientas y plataformas populares en el campo del análisis de datos, como Jupyter
-                            Notebooks y Google Colab.
-                        </li>
-                        <li>Trabajo en proyectos prácticos que simulan situaciones reales de análisis de datos y
-                            resolución de problemas.
-                        </li>
-                        <li>Colaboración en equipo y participación en discusiones y actividades de aprendizaje
-                            colaborativo.
-                        </li>
-                        <li>Exploración de tendencias y avances en el campo del análisis de datos y la ciencia de la
-                            computación a través de lecturas y recursos adicionales.
-                        </li>
-                    </ul>
-                </li>
-                <br>
-                <li>
-                    <strong>Universidad de Buenos Aires</strong> - Licenciatura, Sociología
-                    <br>
-                    <em>2007 - 2014</em>
-                    <br>
-                    Durante mi licenciatura en Sociología en la Universidad de Buenos Aires, adquirí una sólida
-                    formación en metodología de la investigación, estadística y ciencia social. A continuación, se
-                    detallan algunos aspectos destacados de mi educación:
-                    <ul>
-                        <li>Estudio y aplicación de metodologías de investigación cualitativa y cuantitativa para el
-                            análisis de fenómenos sociales.
-                        </li>
-                        <li>Desarrollo de habilidades en diseño de investigaciones sociales, incluyendo la formulación
-                            de hipótesis y la selección de técnicas de muestreo adecuadas.
-                        </li>
-                        <li>Análisis y interpretación de datos utilizando técnicas estadísticas avanzadas, como análisis
-                            multivariado y modelos de regresión.
-                        </li>
-                        <li>Aplicación de pruebas de hipótesis y técnicas de inferencia estadística para validar
-                            resultados y sacar conclusiones significativas.
-                        </li>
-                        <li>Uso de software estadístico como SPSS y R para el análisis de datos y la generación de
-                            informes.
-                        </li>
-                        <li>Participación en proyectos de investigación social, desde la planificación y recolección de
-                            datos hasta el análisis y la presentación de resultados.
-                        </li>
-                        <li>Exploración de teorías sociológicas y conceptos fundamentales en el estudio de la sociedad y
-                            la cultura.
-                        </li>
-                        <li>Exposición a diversas metodologías de investigación en ciencias sociales, como encuestas,
-                            entrevistas en profundidad, observación participante, entre otras.
-                        </li>
-                        <li>Discusión crítica de textos académicos y estudios empíricos relevantes en el campo de la
-                            sociología y disciplinas relacionadas.
-                        </li>
-                        <li>Participación en seminarios y debates sobre temas actuales en sociología y la aplicación de
-                            métodos de investigación en contextos prácticos.
-                        </li>
-                    </ul>
-                </li>
-                <br>
-                <li>
-                    <strong>Mas detalles en <a href="https://www.linkedin.com/in/mariano-gobea-alcoba/"
-                                               class="f-heading f-22 link color-facebook mb-20">LinkedIn</a></strong>
-                </li>
-
-            </ul>
-        </div>
-
-    </div>
+    {% endfor %}
 {% endblock %}

@@ -1,8 +1,15 @@
 from django.shortcuts import render
-from .models import PorfolioItem
+from .models import PorfolioItem, Employee, Experience
 
 def quienes_somos(request):
-    return render(request, 'trabajos/quienes_somos.html')
+    empleados = Employee.objects.all()
+    for empleado in empleados:
+        description_split = empleado.description.split('|')
+        empleado.description = description_split
+    context = {
+        'empleados': empleados
+    }
+    return render(request, 'trabajos/quienes_somos.html', context)
 
 def nuestro_porfolio(request):
     porfolio_items = PorfolioItem.objects.all()
