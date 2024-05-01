@@ -1,0 +1,102 @@
+{% extends 'partials/base.html' %}
+
+{% block styles %}
+    <style>
+        /* Estilos para la sección de cursos */
+        .courses-section {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #e9ecef;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .courses-section h2 {
+            color: #343a40;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        /* Estilos para las tarjetas de curso */
+        .course-card {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .course-card h3 {
+            color: #495057;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .course-card p {
+            color: #6c757d;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        .course-card a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        /* Estilos para las imágenes de logo del curso */
+        .course-card img.course-image {
+            width: 50%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 20px;
+            border: black 2px solid;
+            margin: 20px 0;
+        }
+
+        /* Estilos para el precio del curso */
+        .course-card p.course-price {
+            color: #28a745;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        /* Estilos para el botón de contratar */
+        .course-card button.course-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .course-card button.course-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <!-- Contenido específico -->
+    <div class="courses-section">
+        <h2>Nuestros Cursos</h2>
+        {% for course in cursos %}
+            <div class="course-card">
+                <h3>{{ course.titulo }}</h3>
+                <ul>
+                    {% for description_fragment in course.descripcion %}
+                        <li>{{ description_fragment }}</li>
+                    {% endfor %}
+                </ul>
+                <img src="{{ course.imagen }}" alt="Logo del {{ course.titulo }}" class="course-image">
+                <p class="course-price">USD {{ course.precio }}</p>
+                <button class="course-btn" onclick="window.location.href='/contacto/'">Contratar</button>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+

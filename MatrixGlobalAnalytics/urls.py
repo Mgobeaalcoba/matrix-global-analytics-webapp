@@ -22,6 +22,7 @@ from legal import views as legal_views
 from trabajos import views as trabajos_views
 from faq import views as faq_views
 from precios import views as precios_views
+from cursos import views as cursos_views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -35,4 +36,5 @@ urlpatterns = [
     path('marcas/', trabajos_views.marcas, name='marcas'),
     path('preguntas-frecuentes/', faq_views.faq_view, name='preguntas_frecuentes'),
     path('precios/', precios_views.precios, name='precios'),
+    path('cursos/', cursos_views.cursos, name='cursos'),
 ]

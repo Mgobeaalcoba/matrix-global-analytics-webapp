@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "trabajos",    # Aplicación "trabajos" agregada
     "faq",         # Aplicación "faq" agregada
     "precios",     # Aplicación "precios" agregada
+    "cursos",       # Aplicación "cursos" agregada
 ]
 
 
