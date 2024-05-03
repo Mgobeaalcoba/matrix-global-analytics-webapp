@@ -1,4 +1,5 @@
 from django.test import TestCase, Client
+from django.template.loader import render_to_string
 from django.urls import reverse
 from .models import FAQ
 
@@ -44,3 +45,26 @@ class FAQViewTestCase(TestCase):
         faq_item = faq_items[0]
         self.assertEqual(faq_item.question, "¿Pregunta de prueba?")
         self.assertEqual(faq_item.answer, "Respuesta de prueba")
+        self.assertEqual(faq_item.__str__(), '¿Pregunta de prueba?')
+
+class TestFAQTemplate(TestCase):
+    def setUp(self):
+        # Crea algunos items de FAQ de ejemplo
+        self.faq_item1 = FAQ.objects.create(
+            question="Pregunta 1",
+            answer="Respuesta 1"
+        )
+        self.faq_item2 = FAQ.objects.create(
+            question="Pregunta 2",
+            answer="Respuesta 2"
+        )
+
+    def test_faq_template(self):
+        # Renderiza el template con los items de FAQ
+        rendered_template = render_to_string('faq/preguntas_frecuentes.html', {'faq_items': [self.faq_item1, self.faq_item2]})
+
+        # Verifica que el contenido esperado esté presente en el template renderizado
+        self.assertInHTML('<h2>Pregunta 1</h2>', rendered_template)
+        self.assertInHTML('<li>Respuesta 1</li>', rendered_template)
+        self.assertInHTML('<h2>Pregunta 2</h2>', rendered_template)
+        self.assertInHTML('<li>Respuesta 2</li>', rendered_template)
