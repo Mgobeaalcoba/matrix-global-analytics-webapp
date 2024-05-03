@@ -3,6 +3,9 @@
 ## Overview
 Matrix Global Analytics is a web application designed to provide data analytics services to businesses of all sizes and industries. Leveraging cutting-edge technologies and a team of experienced professionals, our platform aims to empower organizations to make data-driven decisions and unlock valuable insights from their data.
 
+## Images:
+![Matrix Global Analytics](/static/i/home_page.png)
+
 ## Features
 - **Data Analysis Services**: Offering a wide range of data analysis services including predictive analytics, real-time data analysis, data mining, business intelligence, and more.
 - **Course Offerings**: Providing comprehensive courses in data-related fields such as Excel, Google Sheets, SQL, Python, R, Tableau, Power BI, and Looker Studio to empower individuals and teams with essential data skills.
