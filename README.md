@@ -1,5 +1,7 @@
 # Matrix Global Analytics
 
+![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2FMgobeaalcoba%2Fmatrix-global-analytics-webapp&label=Visitors&countColor=%23263759)
+
 ## Overview
 Matrix Global Analytics is a web application designed to provide data analytics services to businesses of all sizes and industries. Leveraging cutting-edge technologies and a team of experienced professionals, our platform aims to empower organizations to make data-driven decisions and unlock valuable insights from their data.
 
